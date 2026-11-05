@@ -1,5 +1,11 @@
 # Changes
 
+## 2.1.1 — 2026-11-05
+
+- Added progressive allocation/scheduling algorithm-selection guidance, with explicit applicability limits.
+- Linked matching, flow, scheduling and MILP references to the approach guide.
+- No task-specific allocation model, solver or answer was added; existing algorithms remain unchanged.
+
 ## 2.1.0 — 2026-11-05
 
 - Added a small executable UI Decision Router driven by confirmed user goals and existing UI.

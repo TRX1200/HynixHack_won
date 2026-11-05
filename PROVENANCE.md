@@ -26,3 +26,8 @@ Adds original generic UI guidance, a deterministic local layout router, syntheti
 optional CSS tokens and an empty review template. W3C explanatory pages are linked as
 accessibility references; no third-party Skill text, commercial assets, external fonts,
 private screenshots, task data or completed application answers are bundled.
+
+## Version 2.1.1 algorithm approach guide
+Original generic decision guidance links official OR-Tools/SciPy documentation and a Princeton
+algorithms lecture. It includes no copied implementation or task-specific solver, rules, data or answers.
+Public availability does not establish permission under current event rules.

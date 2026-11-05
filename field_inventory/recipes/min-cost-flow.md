@@ -6,6 +6,9 @@
 **Index family:** `algorithms`  
 **Useful signals:** assignment, capacity, cost, many to one, flow
 
+## 선택 전에 필요한 절만 읽기
+문제 README를 우선하고 [알고리즘 선택 가이드](../../ALLOCATION_STRATEGY_KO.md)의 1~2절과 3절만 먼저 읽는다. 흐름 단위·공급·수요·용량·단위당 비용이 원래 조건을 보존하는지 확인한다. 비분할 항목의 서로 다른 자원 소모, 고정비·묶음 제약을 단순 항목 수 용량으로 바꾸지 않는다. 전체 가이드나 다른 카드를 한꺼번에 불러오지 않는다. 구현 뒤에는 7절로 원래 조건을 독립 검증한다.
+
 ## Suggested baseline to implement (not bundled)
 Greedy feasible assignment
 

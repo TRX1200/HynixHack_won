@@ -6,6 +6,9 @@
 **Index family:** `algorithms`  
 **Useful signals:** integer, binary, budget, allocation, logical constraints
 
+## 선택 전에 필요한 절만 읽기
+문제 README를 우선하고 [알고리즘 선택 가이드](../../ALLOCATION_STRATEGY_KO.md)의 1~2절과 5절만 먼저 읽는다. 정수·연속 변수와 선형 관계, 논리·시간 제약을 구별해 MILP 또는 CP-SAT의 적합성을 확인한다. 시간 제한의 실행 가능 해를 최적해로 표시하지 않는다. 전체 가이드나 다른 카드를 한꺼번에 불러오지 않는다. 구현 뒤에는 7절로 원래 조건을 독립 검증한다.
+
 ## Suggested baseline to implement (not bundled)
 Greedy feasible + verified bounds
 

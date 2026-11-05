@@ -1,6 +1,6 @@
 {
   "package": "open-workbench-kit",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "date": "2026-11-05",
   "files": [
     {
@@ -50,8 +50,8 @@
     },
     {
       "path": ".agents/skills/wb-optimize/SKILL.md",
-      "bytes": 2411,
-      "sha256": "eb7293d95038c70a03cb35969e7c61e1c7dab51cb9dc823fbe2b3bf323e5ab52"
+      "bytes": 2863,
+      "sha256": "4bfd654a8cf95cd8aaa3ed47dd74e5acd6e6f06fe4037fb812e773cf237dc3e3"
     },
     {
       "path": ".agents/skills/wb-physics/SKILL.md",
@@ -119,6 +119,11 @@
       "sha256": "2b8ad3e3c3719918f60b42714cef3e6d98eb6b6f6d69485087ce5d637f73d7d1"
     },
     {
+      "path": "ALLOCATION_STRATEGY_KO.md",
+      "bytes": 12660,
+      "sha256": "2ea9c5673ed30ecdb7f3c018027551ee73b3ce9956f3bad052ecd49d953f38c4"
+    },
+    {
       "path": "catalog/libraries.json",
       "bytes": 20251,
       "sha256": "23dd041e1b85e39d575600c60c6027eb3e708f5cd591e377de20a123fcb6ddc0"
@@ -130,8 +135,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1453,
-      "sha256": "f2b75e6d5b1410c32ad75da666c4e9485880dcb11c1650586422b824b0e66302"
+      "bytes": 1769,
+      "sha256": "c83757ae1d9c9e24337248a406f2d8db19f052cbbf98e48e78253c1c28bf5d9b"
     },
     {
       "path": "configs/mcp-empty.json",
@@ -237,6 +242,11 @@
       "path": "docs/TEST_RESULTS_v2.0.0.md",
       "bytes": 3987,
       "sha256": "6778f2ccb62c98c8955ab016a4b948c3e5d4882af08ca8b66bad33a1ad024e3a"
+    },
+    {
+      "path": "docs/TEST_RESULTS_v2.1.0.md",
+      "bytes": 2983,
+      "sha256": "c607318ef124a241e649ab67cadf5fcee314254e869a97fda01c3c140309c865"
     },
     {
       "path": "docs/TOOLS.md",
@@ -770,8 +780,8 @@
     },
     {
       "path": "field_inventory/recipes/bipartite-match.md",
-      "bytes": 1876,
-      "sha256": "1de3353113c3bca9d6174d789c5580fd39e8b1bccc111bd12b0af885e5ef5f1b"
+      "bytes": 2368,
+      "sha256": "793597478f2938434ee2d470e2c10e4bb435ce907fe8152f85efc33983dc69ab"
     },
     {
       "path": "field_inventory/recipes/bootstrap-ci.md",
@@ -955,13 +965,13 @@
     },
     {
       "path": "field_inventory/recipes/min-cost-flow.md",
-      "bytes": 1873,
-      "sha256": "abb950076404550572bf814a1216341d10ecd913963ef12c1054b41f9a7f598a"
+      "bytes": 2421,
+      "sha256": "a962f0c25346167eb1b30366fbb3b5085db2fc6a60bb136fd3ffdfa5a18b3091"
     },
     {
       "path": "field_inventory/recipes/mixed-integer.md",
-      "bytes": 1888,
-      "sha256": "c877a639c671d1cebd45963768cb9bf71d4c0e1c35cca3f4417320a8e41f3e97"
+      "bytes": 2400,
+      "sha256": "de07b7407dd2e2289cb095fb84049eb84b5eb3d99522e409dcf4077918e1feda"
     },
     {
       "path": "field_inventory/recipes/multiobjective.md",
@@ -1060,8 +1070,8 @@
     },
     {
       "path": "field_inventory/recipes/resource-schedule.md",
-      "bytes": 1861,
-      "sha256": "f327755bfed07499c84a62bc112b460d1534abefaab54f4ad8fa227b2a435ac0"
+      "bytes": 2436,
+      "sha256": "9b8db1b755188ee844b9c6f4fc58e52eda0948cbb2e037d46383199b5fd4b7a2"
     },
     {
       "path": "field_inventory/recipes/robust-optimization.md",
@@ -1275,18 +1285,18 @@
     },
     {
       "path": "PROVENANCE.md",
-      "bytes": 1755,
-      "sha256": "f7357dc8243b675c6328a5a25dbb9760d31f4e00b46eadcb0cc19293e5238a34"
+      "bytes": 2076,
+      "sha256": "a442e05fcbb27e1ddc5adb7d372c92926433f45c2182158b08d41e0523685800"
     },
     {
       "path": "pyproject.toml",
       "bytes": 329,
-      "sha256": "2ed24adc0f75802debba69eea06c743ac0c9af6db582df64161a22edd20d8a19"
+      "sha256": "5e9e5d50e45031d83df4d5f71ecf47bdf95eaaa4db72b6a8444947f8fb1c20e3"
     },
     {
       "path": "README.md",
-      "bytes": 3778,
-      "sha256": "fcbbe5769ce74453cd1e9fed81c7186472b2cc3fc0c25d93e6a6fbab7df11115"
+      "bytes": 3955,
+      "sha256": "89df90edbf872dd72023fc2b3281face07dce486fe9ad7442f6fad7c2f95a771"
     },
     {
       "path": "requirements-optional.txt",
@@ -1300,8 +1310,8 @@
     },
     {
       "path": "START_HERE_KO.md",
-      "bytes": 4914,
-      "sha256": "394e603028ca00d79b555644ca3505c61412a1579a192b3c6bc31294f7c35f6a"
+      "bytes": 5475,
+      "sha256": "0cfe528c30481aadcff3428dc7e4d7a044f034485b053c162d459bf64c5bf39a"
     },
     {
       "path": "templates/AI_USAGE.md",
@@ -1416,12 +1426,12 @@
     {
       "path": "TEST_RESULTS.json",
       "bytes": 1575,
-      "sha256": "0ff5aa4d94f9017af01b94ec749d6ae46ee943763ff2f746b234a335daa7afc9"
+      "sha256": "3fa5b85b914dd03947d7a881e73c2a7e43d25e8f88c375c66ac16f3759ffc96c"
     },
     {
       "path": "TEST_RESULTS.md",
-      "bytes": 2983,
-      "sha256": "c607318ef124a241e649ab67cadf5fcee314254e869a97fda01c3c140309c865"
+      "bytes": 2580,
+      "sha256": "0005e505a605d18ed83883dc1421eb6a407e484b2d7b9384ba742c1d243499c2"
     },
     {
       "path": "tests/test_archetypes.py",
@@ -1546,7 +1556,7 @@
     {
       "path": "workbench/__init__.py",
       "bytes": 109,
-      "sha256": "24a5ad185a933fa41d68429d6994fe3b15b8cae1f1497d0726b6b4d2255597d0"
+      "sha256": "7025c1c639cf6d832083095a04e41fa3758c4acb5d006c444df9e4a2efab97aa"
     },
     {
       "path": "workbench/__main__.py",

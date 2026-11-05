@@ -6,6 +6,9 @@
 **Index family:** `algorithms`  
 **Useful signals:** matching, worker task, one to one, matrix
 
+## 선택 전에 필요한 절만 읽기
+문제 README를 우선하고 [알고리즘 선택 가이드](../../ALLOCATION_STRATEGY_KO.md)의 1~2절과 3절만 먼저 읽는다. 실제 일대일 대응인지 확인한다. 자원 용량, 항목별 다른 소모량, 고정비·묶음 제약이 결합하면 단순 선형 배정으로 확정하지 않는다. 전체 가이드나 다른 카드를 한꺼번에 불러오지 않는다. 구현 뒤에는 7절로 원래 조건을 독립 검증한다.
+
 ## Suggested baseline to implement (not bundled)
 Greedy valid pairing
 

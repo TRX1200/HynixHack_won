@@ -1,10 +1,11 @@
-# HynixHack_won · Open Workbench 2.1
+# HynixHack_won · Open Workbench 2.1.1
 
 **문제를 분류하고, 필요한 카드 2~6개만 찾아 쓰는 MIT 범용 개발 도구.**
 공개 준비용 코드·설명서·합성 예제입니다. 실제 문제·답안은 포함하지 않으며 특정 평가의 공식 허가를 대신하지 않습니다.
 
 처음에는 [START_HERE_KO.md](START_HERE_KO.md)만 읽으세요.
 웹 화면이 필요하면 [UI_DESIGN_KO.md](UI_DESIGN_KO.md)로 UI 유형과 관련 지침을 선택하세요.
+배치·할당 접근법은 문제 README를 우선하고 [알고리즘 선택 가이드](ALLOCATION_STRATEGY_KO.md)의 1~2절과 해당 구조의 절 하나만 읽으세요.
 v2부터 실행 소스가 저장소에 직접 들어 있습니다. **Clone 후 압축 해제가 필요 없습니다.**
 
 ## 제공된 AI에게 줄 첫 요청

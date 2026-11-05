@@ -1,4 +1,4 @@
-# Actual validation — v2.1.0
+# Actual validation — v2.1.1
 
 2026-11-05, Windows, Python 3.12.14. No package installation.
 
@@ -16,18 +16,14 @@ The 18-test UI stdlib run overlaps the full suite; do not count it again.
 The three full-suite skips remain jsonschema/PyMuPDF absence and a Windows symlink permission limitation.
 Local MCP smoke performs six checks. Catalog verification retains 90 cards.
 
-## UI extension evidence
+## Approach-guide extension evidence
 
-- Router tested on distinct user goals, admin-role-only negatives, explicit geography, UI-not-required,
-  unknown conditions, preserved existing UI, bounded document/card selection and hostile JSON.
-- Ten fixed synthetic profiles are included under `examples/ui/`. The router changes no source,
-  files, permissions, packages or network state. It proposes guidance, not generated UI.
-- Skill installation checks root resolution and preserved MIT license; all 20 metadata entries are checked.
-- Independent forward review covers an existing analysis screen, a simple input workflow and an API-only task.
-  Its evidence concerns document selection and preserved requirements, not rendered applications.
-- Optional CSS token pairs were numerically contrast-checked. This is not a full product accessibility audit.
-- All release JSON parses, Python source is checked against Python 3.10 grammar, and local Markdown targets
-  and the source/ZIP manifest are checked during packaging.
+- This release adds generic Markdown decision guidance and links, with no new allocation solver.
+- Independent read-only algorithm review found no critical error in applicability boundaries,
+  solver status handling, lexicographic objectives or original-input validation guidance.
+- Existing unit suites and six local MCP smoke checks were rerun; these do not execute the new prose.
+- The 90 reference cards and 20 Skills remain; Python syntax, JSON and local guide links are checked.
+- Previous UI-specific evidence is preserved in `docs/TEST_RESULTS_v2.1.0.md`.
 
 ## NOT_RUN / limits
 

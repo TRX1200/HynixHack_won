@@ -60,6 +60,10 @@ python tools/install_skills.py --project /실제/과제/루트 --skills wb-field
 실행 예제는 [docs/ARCHETYPE_DEMOS.md](docs/ARCHETYPE_DEMOS.md)에서 고릅니다.
 합성 데모 통과는 실제 과제의 요구를 검증했다는 뜻이 아닙니다.
 
+## 배치·자원 할당 접근법이 필요한 경우
+
+문제 README의 요구사항을 우선합니다. [ALLOCATION_STRATEGY_KO.md](ALLOCATION_STRATEGY_KO.md)의 1~2절로 구조를 확인한 뒤, 매칭·유량은 3절, 구간·시작 시간은 4절, CP-SAT·MILP는 5절 중 필요한 절만 읽습니다. 시간이 제한되면 6절, 구현 뒤에는 7절의 검증을 선택합니다. 모든 알고리즘이나 90개 카드를 한꺼번에 읽지 않습니다. 이 문서는 접근법 안내이며 특정 업무의 모델·완성 솔버가 아닙니다.
+
 ## 화면이 필요한 경우
 
 [UI_DESIGN_KO.md](UI_DESIGN_KO.md)를 읽고 `wb-ui-design` 또는 `tools/ui_router.py`로 필요한 UI 지침만 고릅니다.

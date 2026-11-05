@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-11-05T08:41:16.512200+00:00",
+  "date_utc": "2026-11-05T09:31:31.827770+00:00",
   "python": "3.12.14",
   "platform": "win32",
   "checks": [
@@ -48,7 +48,7 @@
   ],
   "source_unchanged": true,
   "success": true,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "total_distinct_unit_tests": 273,
   "passed": 270,
   "skipped": 3,
