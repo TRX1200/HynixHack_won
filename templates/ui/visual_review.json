@@ -1,0 +1,22 @@
+{
+  "purpose": "Blank local review record. Populate from actual permitted inspection; do not publish task evidence.",
+  "functional_status": "NOT_RUN",
+  "visual_status": "NOT_RUN",
+  "route": null,
+  "role": null,
+  "viewport_css_pixels": null,
+  "state": null,
+  "evidence_local_path": null,
+  "findings": [],
+  "finding_fields": ["severity: blocker|major|minor", "observed", "expected", "evidence", "fix", "recheck_status"],
+  "checks": {
+    "primary_task_and_hierarchy": "NOT_RUN",
+    "tokens_type_spacing_components": "NOT_RUN",
+    "kpi_units_periods_missing_values": "NOT_RUN",
+    "role_appropriate_navigation": "NOT_RUN",
+    "mobile_overflow_and_zoom": "NOT_RUN",
+    "keyboard_focus_and_contrast": "NOT_RUN",
+    "loading_empty_error_long_text": "NOT_RUN"
+  },
+  "notes": "Use NA with a reason for inapplicable checks. A passing function test does not set visual_status to PASS."
+}

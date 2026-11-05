@@ -93,11 +93,20 @@ class ProtocolInstallTests(unittest.TestCase):
         self.assertFalse((self.root/'AGENTS.md').exists())
     def test_installer_refuses_traversal(self):
         with self.assertRaises(ValueError):install_mod.install(self.root,['../wb-start'])
+    def test_ui_skill_resolves_original_guidance_paths(self):
+        install_mod.install(self.root,['wb-ui-design'])
+        dest=self.root/'.agents/skills/wb-ui-design'
+        text=(dest/'SKILL.md').read_text(encoding='utf-8')
+        self.assertNotIn('__KIT_ROOT__',text)
+        self.assertIn((ROOT/'docs/ui').as_posix(),text)
+        self.assertIn((ROOT/'tools/ui_router.py').as_posix(),text)
+        self.assertEqual((dest/'LICENSE').read_bytes(),(ROOT/'LICENSE').read_bytes())
+        self.assertFalse((self.root/'AGENTS.md').exists())
     def test_all_skills_metadata_and_length(self):
         paths=list((ROOT/'.agents/skills').glob('*/SKILL.md'))
         expected={'wb-start','wb-intake','wb-vision','wb-docs','wb-data','wb-build','wb-debug',
                   'wb-optimize','wb-verify','wb-report','wb-explain','wb-finish',
-                  'wb-graphics','wb-visualize','wb-stack','wb-pipeline','wb-physics','wb-stats','wb-field-inventory'}
+                  'wb-graphics','wb-visualize','wb-stack','wb-pipeline','wb-physics','wb-stats','wb-field-inventory','wb-ui-design'}
         self.assertEqual({p.parent.name for p in paths},expected)
         for p in paths:
             text=p.read_text(encoding='utf-8');self.assertTrue(text.startswith('---\nname: wb-'));self.assertIn('description:',text);self.assertLess(len(text.splitlines()),100)

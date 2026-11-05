@@ -31,3 +31,9 @@ Code unit tests do not prove UI interaction
 
 ## Safety boundary
 Generic, public code and synthetic fixtures only. Exam problems, raw data, work logs and private notes must not enter public Git. Do not install external AI models or transmit task data.
+
+## Optional UI design route
+When an actual screen is required, start at [UI guidance](../../docs/ui/README.md).
+Run `python tools/ui_router.py <local-ui-profile.json> --json` from the kit root, then read
+only the selected guidance. Keep the existing stack and record functional and visual checks separately.
+This reference does not create a screen or prove visual quality.

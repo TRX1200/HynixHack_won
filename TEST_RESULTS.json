@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-11-05T08:23:14.639012+00:00",
+  "date_utc": "2026-11-05T08:41:16.512200+00:00",
   "python": "3.12.14",
   "platform": "win32",
   "checks": [
@@ -7,15 +7,8 @@
       "name": "core_full",
       "command": "python -B -m unittest discover -s tests -v",
       "exit_code": 0,
-      "tests": 155,
+      "tests": 174,
       "skipped": 3
-    },
-    {
-      "name": "core_stdlib",
-      "command": "python -B -S -m unittest discover -s tests -q",
-      "exit_code": 0,
-      "tests": 155,
-      "skipped": 11
     },
     {
       "name": "inventory_full",
@@ -25,10 +18,10 @@
       "skipped": 0
     },
     {
-      "name": "inventory_stdlib",
-      "command": "python -B -S -m unittest discover -s field_inventory/tests -q",
+      "name": "ui_stdlib",
+      "command": "python -B -S -m unittest discover -s tests -p test_ui_router.py -v",
       "exit_code": 0,
-      "tests": 99,
+      "tests": 18,
       "skipped": 0
     },
     {
@@ -44,42 +37,23 @@
       "exit_code": 0,
       "tests": null,
       "skipped": 0
+    },
+    {
+      "name": "scope_scan",
+      "command": "python -B field_inventory/tools/public_safety_scan.py .",
+      "exit_code": 0,
+      "tests": null,
+      "skipped": 0
     }
   ],
-  "source_unchanged_during_tests": true,
+  "source_unchanged": true,
   "success": true,
-  "version": "2.0.0",
-  "baseline": {
-    "version": "1.2.0",
-    "discovered": 130,
-    "skipped": 3,
-    "failures": 0
-  },
-  "archetype_demo": {
-    "families": 6,
-    "checks": 24,
-    "positive": 6,
-    "deliberate_rejections": 12,
-    "boundary": 6,
-    "exit_code": 0
-  },
-  "browser_manual": {
-    "scope": "synthetic local web demo",
-    "writer_post_status": 201,
-    "computed_area": 6,
-    "reader_post_status": 403,
-    "reader_get_status": 200
-  },
-  "forward_review": {
-    "synthetic_profiles": 2,
-    "selected_recipe_bodies": 4,
-    "same_input_rerun": "PASS after fixing runtime and algorithm exclusions"
-  },
-  "not_run": [
-    "Managed Cofa environment and actual assessment",
-    "Actual Python 3.10 runtime",
-    "Official skill quick_validate: PyYAML missing",
-    "Group splitting, confidence intervals, calibration, general PDE, physical image calibration, semantic contradiction detection",
-    "Optional MCP servers, scientific packages, production auth and external services"
-  ]
+  "version": "2.1.0",
+  "total_distinct_unit_tests": 273,
+  "passed": 270,
+  "skipped": 3,
+  "ui_router_not_ui_generation": true,
+  "product_visual_review": "NOT_RUN: this release adds guidance, not a product UI",
+  "managed_environment_integration": "NOT_RUN",
+  "skill_quick_validator": "NOT_RUN: PyYAML unavailable; custom metadata and installer integration checked separately"
 }

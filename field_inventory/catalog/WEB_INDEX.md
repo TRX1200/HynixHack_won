@@ -17,3 +17,8 @@ These are decision aids, not automatic solvers. Open specific recipe only after 
 | [`ui-map`](../recipes/ui-map.md) | Coordinate map and markers | SVG coordinate overlay on local schematic | Coordinate bounds and click-to-ID mapping |
 | [`ui-chart`](../recipes/ui-chart.md) | Exploratory data chart | Plotly or static SVG with units | Axis units missing values and selection smoke |
 | [`web-export`](../recipes/web-export.md) | Export consistent artifacts | JSON/CSV with deterministic naming | Export re-import roundtrip and content comparison |
+
+## Screen design only when required
+For a required visible UI, use [UI decision guidance](../../docs/ui/README.md) and the small
+UI router. Preserve the six-card total limit; UI documentation is conditional reference,
+not a reason to load all 90 cards or add a frontend to an API-only task.

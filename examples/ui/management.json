@@ -1,0 +1,11 @@
+{
+  "id": "synthetic-ui-management",
+  "ui_required": true,
+  "geo_is_primary": false,
+  "roles": [
+    "editor",
+    "viewer"
+  ],
+  "records_volume": "large",
+  "primary_goal": "manage"
+}

@@ -60,6 +60,12 @@ python tools/install_skills.py --project /실제/과제/루트 --skills wb-field
 실행 예제는 [docs/ARCHETYPE_DEMOS.md](docs/ARCHETYPE_DEMOS.md)에서 고릅니다.
 합성 데모 통과는 실제 과제의 요구를 검증했다는 뜻이 아닙니다.
 
+## 화면이 필요한 경우
+
+[UI_DESIGN_KO.md](UI_DESIGN_KO.md)를 읽고 `wb-ui-design` 또는 `tools/ui_router.py`로 필요한 UI 지침만 고릅니다.
+대시보드·관리 화면·입력 폼·지도는 실제 사용자 목표로 선택하고 기존 UI를 우선 유지합니다.
+기능 검사와 디자인 검토를 별도로 기록합니다. API/CLI 전용 과제에는 UI를 추가하지 않습니다.
+
 ## 5. MCP와 재접속
 
 검색기와 코드 선택기는 CLI이므로 MCP 연결이 필요 없습니다.

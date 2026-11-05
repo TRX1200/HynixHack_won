@@ -1,5 +1,13 @@
 # Changes
 
+## 2.1.0 — 2026-11-05
+
+- Added a small executable UI Decision Router driven by confirmed user goals and existing UI.
+- Added progressive design-system, dashboard, admin/user, responsive and visual-review guidance.
+- Added wb-ui-design, optional scoped CSS tokens and a blank local visual-review record.
+- Functional and visual validation remain separate; router output is guidance, not generated UI.
+- Existing 90-card catalog and framework choices are preserved; API/CLI tasks do not acquire a UI by default.
+
 ## 2.0.0 — 2026-11-05
 
 - Local progressive retrieval: 90 recipe cards, 11 task types, 29 explicit rules, 16 architecture references.

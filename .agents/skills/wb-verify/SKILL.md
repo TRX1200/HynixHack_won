@@ -37,3 +37,7 @@ python3 "__KIT_ROOT__/tools/run.py" check-manifest <work> <manifest.json>
 
 ## 완료 확인
 실제 수행 결과·근거·미수행/한계를 구분하십시오. Skill 사용 자체를 성공이나 검증 완료로 보고하지 마십시오.
+
+## 화면 결과가 있는 경우
+기능 PASS와 시각 PASS는 별개다. `__KIT_ROOT__/docs/ui/VISUAL_REVIEW.md`를 사용해
+허용된 미리보기에서 화면 폭·역할·상태별로 확인하고, 실제 보지 못한 항목은 NOT_RUN으로 남긴다.

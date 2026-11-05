@@ -20,3 +20,9 @@ Local generated test logs and browser credentials are not distributed.
 Original kit works and the reviewed additions follow the retained MIT LICENSE. External
 libraries and UI/MCP projects are references, not vendored assets; their own licenses and
 runtime requirements still apply. Public availability is not organizer approval.
+
+## Version 2.1.0 UI extension
+Adds original generic UI guidance, a deterministic local layout router, synthetic profiles,
+optional CSS tokens and an empty review template. W3C explanatory pages are linked as
+accessibility references; no third-party Skill text, commercial assets, external fonts,
+private screenshots, task data or completed application answers are bundled.

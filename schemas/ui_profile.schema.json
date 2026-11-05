@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit UI workflow facts; no keyword classification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["primary_goal", "ui_required", "geo_is_primary", "roles", "records_volume"],
+  "properties": {
+    "id": {"type": "string", "maxLength": 2048},
+    "primary_goal": {"enum": ["analyze", "manage", "submit", "locate", "explore", "present", "unknown"]},
+    "ui_required": {"type": ["boolean", "null"]},
+    "geo_is_primary": {"type": ["boolean", "null"]},
+    "roles": {"type": "array", "maxItems": 32, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 2048}},
+    "records_volume": {"enum": ["small", "large", "unknown"]},
+    "existing_ui": {"type": "string", "maxLength": 2048},
+    "constraints": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 2048}}
+  }
+}

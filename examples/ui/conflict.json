@@ -1,0 +1,8 @@
+{
+  "id": "synthetic-ui-conflict",
+  "ui_required": true,
+  "geo_is_primary": false,
+  "roles": [],
+  "records_volume": "small",
+  "primary_goal": "locate"
+}

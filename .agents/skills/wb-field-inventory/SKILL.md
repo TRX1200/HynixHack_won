@@ -35,3 +35,8 @@ The main entry `python tools/inventory.py ...` forwards to the same inventory. U
 ## Boundaries
 
 Use only provided and permitted agents/runtimes. Do not generate or import actual task answers through external AI, upload private files, transmit work artifacts, automate restricted GUI actions or bypass managed controls. Use official reconnect/help procedures. Public generic documentation and synthetic examples do not confer operating approval for a particular assessment or platform.
+
+## UI branch
+Only when a visible interface is a required deliverable, read `__KIT_ROOT__/docs/ui/README.md`
+and use `__KIT_ROOT__/tools/ui_router.py` with confirmed goals. Load only the selected UI
+guidance; do not add a dashboard to an API/CLI-only task or replace an existing design system.

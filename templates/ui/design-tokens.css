@@ -1,0 +1,74 @@
+/* Optional MIT starter. Keep the existing product system when one exists.
+   Apply class="wb-ui" to a container; use only needed wb-* primitives.
+   Example palette, not an accessibility certification or rendered product. */
+.wb-ui {
+  --wb-bg: #f5f7fa;
+  --wb-surface: #ffffff;
+  --wb-text: #182230;
+  --wb-muted: #526174;
+  --wb-accent: #1d4ed8;
+  --wb-accent-hover: #1e40af;
+  --wb-on-accent: #ffffff;
+  --wb-border: #c6ced9; /* decorative separators */
+  --wb-control-border: #778398;
+  --wb-success: #166534;
+  --wb-danger: #b42318;
+  --wb-space-1: .25rem;
+  --wb-space-2: .5rem;
+  --wb-space-3: .75rem;
+  --wb-space-4: 1rem;
+  --wb-space-6: 1.5rem;
+  --wb-space-8: 2rem;
+  --wb-space-12: 3rem;
+  --wb-radius-control: .5rem;
+  --wb-radius-panel: .75rem;
+  --wb-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  font-family: var(--wb-font);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--wb-text);
+  background: var(--wb-bg);
+  overflow-wrap: anywhere;
+}
+.wb-ui *, .wb-ui *::before, .wb-ui *::after { box-sizing: border-box; }
+.wb-ui h1 { margin: 0 0 var(--wb-space-4); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+.wb-ui h2 { margin: 0 0 var(--wb-space-3); font-size: 1.25rem; line-height: 1.35; }
+.wb-ui .wb-muted { color: var(--wb-muted); }
+.wb-ui .wb-numeric { font-variant-numeric: tabular-nums; text-align: right; }
+.wb-ui .wb-stack { display: grid; gap: var(--wb-space-4); min-width: 0; }
+.wb-ui .wb-toolbar { display: flex; flex-wrap: wrap; gap: var(--wb-space-2); align-items: center; }
+.wb-ui .wb-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--wb-space-2);
+  min-height: 2.75rem; padding: .625rem 1rem; border: 1px solid transparent;
+  border-radius: var(--wb-radius-control); font: inherit; font-weight: 600;
+  background: var(--wb-accent); color: var(--wb-on-accent); cursor: pointer;
+}
+.wb-ui .wb-button:hover { background: var(--wb-accent-hover); }
+.wb-ui .wb-button--secondary { background: var(--wb-surface); color: var(--wb-text); border-color: var(--wb-control-border); }
+.wb-ui .wb-button--secondary:hover { background: var(--wb-bg); }
+.wb-ui .wb-button--danger { background: var(--wb-danger); }
+.wb-ui .wb-button--danger:hover { background: #912018; }
+.wb-ui .wb-button:disabled { cursor: not-allowed; opacity: .6; }
+.wb-ui :focus-visible { outline: 3px solid var(--wb-accent); outline-offset: 3px; }
+.wb-ui .wb-field { display: grid; gap: var(--wb-space-2); }
+.wb-ui .wb-input {
+  width: 100%; min-width: 0; min-height: 2.75rem; padding: .625rem .75rem;
+  border: 1px solid var(--wb-control-border); border-radius: var(--wb-radius-control);
+  font: inherit; background: var(--wb-surface); color: var(--wb-text);
+}
+.wb-ui .wb-input[aria-invalid="true"] { border-color: var(--wb-danger); }
+.wb-ui .wb-error { color: var(--wb-danger); }
+.wb-ui .wb-panel { padding: var(--wb-space-6); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-panel); background: var(--wb-surface); min-width: 0; }
+/* Give the scroll wrapper a descriptive accessible name; preserve native table semantics. */
+.wb-ui .wb-table-scroll { max-width: 100%; overflow-x: auto; }
+.wb-ui .wb-table { width: 100%; border-collapse: collapse; background: var(--wb-surface); }
+.wb-ui .wb-table th, .wb-ui .wb-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--wb-border); text-align: start; vertical-align: top; }
+.wb-ui .wb-table th { font-size: .875rem; font-weight: 600; background: var(--wb-bg); }
+.wb-ui .wb-table .wb-numeric { text-align: right; }
+@media (max-width: 40rem) {
+  .wb-ui .wb-panel { padding: var(--wb-space-4); }
+  .wb-ui .wb-table th, .wb-ui .wb-table td { padding: .625rem .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wb-ui .wb-button, .wb-ui .wb-input { transition: none; }
+}

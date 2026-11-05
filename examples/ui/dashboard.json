@@ -1,0 +1,11 @@
+{
+  "id": "synthetic-ui-dashboard",
+  "ui_required": true,
+  "geo_is_primary": false,
+  "roles": [
+    "viewer",
+    "admin"
+  ],
+  "records_volume": "small",
+  "primary_goal": "analyze"
+}
