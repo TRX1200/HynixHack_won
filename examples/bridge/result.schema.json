@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Synthetic temperature result v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "unit",
+    "items",
+    "count_total",
+    "count_used",
+    "mean"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "unit": {
+      "const": "degC"
+    },
+    "count_total": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "count_used": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "mean": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "value"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -273.15,
+            "maximum": 1000000
+          }
+        }
+      }
+    }
+  },
+  "$comment": "This schema cannot prove count/mean consistency, unique IDs, or physical validity. Run semantic validation as well."
+}

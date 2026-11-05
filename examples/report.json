@@ -1,0 +1,32 @@
+{
+  "title": "합성 데이터 검사 예제 — 실제 업무 결과 아님",
+  "summary": "이 문서는 렌더링 확인용 합성 예제입니다.",
+  "scope": "예제 CSV 형식과 보고서 구조만 확인합니다.",
+  "findings": [
+    {
+      "claim": "실제 업무에 대한 결과나 성능 수치를 포함하지 않습니다.",
+      "type": "scope"
+    }
+  ],
+  "method": [
+    "정적 HTML/Markdown 출력 확인"
+  ],
+  "validation": [
+    {
+      "check": "실제 업무 검증",
+      "expected": "과제별 정의 필요",
+      "actual": "수행하지 않음",
+      "status": "not_run",
+      "evidence": ""
+    }
+  ],
+  "limitations": [
+    "이 예제는 완성 제출물이나 정답이 아닙니다."
+  ],
+  "next_actions": [
+    "실제 요구에 맞는 입력과 기대값을 작성하십시오."
+  ],
+  "sources": [
+    "examples/report.json (합성 입력)"
+  ]
+}

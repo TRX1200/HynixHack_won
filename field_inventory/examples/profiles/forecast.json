@@ -1,0 +1,23 @@
+{
+  "_synthetic": true,
+  "id": "synth-forecast",
+  "summary": "Forecast daily synthetic demand with forward-only validation",
+  "task_types": [
+    "statistics_ml",
+    "data_pipeline"
+  ],
+  "signals": [
+    "forecast",
+    "time series",
+    "trend",
+    "leakage",
+    "train test"
+  ],
+  "deliverables": [
+    "prediction CSV",
+    "metrics report"
+  ],
+  "properties": {
+    "task_subtype": "time_series_forecast"
+  }
+}

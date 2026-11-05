@@ -1,0 +1,35 @@
+{
+  "_synthetic": true,
+  "id": "synth-sched",
+  "summary": "Schedule a synthetic set of jobs on shared resources, respecting precedence and time windows",
+  "task_types": [
+    "optimization",
+    "web_app"
+  ],
+  "signals": [
+    "resource",
+    "schedule",
+    "precedence",
+    "capacity",
+    "time window"
+  ],
+  "objective": {
+    "sense": "min",
+    "metric": "makespan",
+    "units": "minutes"
+  },
+  "hard_constraints": [
+    "no overlap",
+    "prerequisites"
+  ],
+  "deliverables": [
+    "schedule UI"
+  ],
+  "environment": {
+    "network_allowed": false
+  },
+  "properties": {
+    "problem_structure": "scheduling",
+    "has_resource_constraints": true
+  }
+}

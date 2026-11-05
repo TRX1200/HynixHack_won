@@ -1,0 +1,6 @@
+# Optional only. Do not update Codex or overwrite the host's Python environment.
+# Tested package versions; install in an approved project venv only when necessary.
+Pillow==12.3.0
+# PyMuPDF offers AGPL-3.0 or a commercial license. OSS use follows its AGPL terms.
+# This toolkit does not redistribute PyMuPDF or grant a commercial license.
+PyMuPDF==1.26.7

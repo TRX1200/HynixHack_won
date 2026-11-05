@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "id": "P1",
+      "requires": [
+        "X"
+      ]
+    },
+    {
+      "id": "P2",
+      "requires": [
+        "Y"
+      ]
+    }
+  ],
+  "options": [
+    {
+      "id": "basic",
+      "features": [
+        "X"
+      ],
+      "unit_cost": "10.00",
+      "capacity": 2
+    },
+    {
+      "id": "plus",
+      "features": [
+        "X",
+        "Y"
+      ],
+      "unit_cost": "25.00",
+      "capacity": 2
+    }
+  ]
+}

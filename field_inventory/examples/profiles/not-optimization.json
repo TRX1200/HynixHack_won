@@ -1,0 +1,20 @@
+{
+  "_synthetic": true,
+  "id": "synth-nonopt",
+  "summary": "Render synthetic power measurements as time-series charts and calculate uncertainty",
+  "task_types": [
+    "scientific_computing",
+    "reporting",
+    "statistics_ml"
+  ],
+  "signals": [
+    "physical units",
+    "measurement",
+    "chart",
+    "confidence interval"
+  ],
+  "deliverables": [
+    "figures",
+    "report"
+  ]
+}

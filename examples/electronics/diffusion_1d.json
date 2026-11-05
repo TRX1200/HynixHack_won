@@ -1,0 +1,5 @@
+{
+  "calculator": "diffusion_1d",
+  "diffusivity_m2_per_s": 1e-14,
+  "time_s": 50
+}

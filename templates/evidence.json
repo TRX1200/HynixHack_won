@@ -1,0 +1,16 @@
+[
+  {
+    "id": "F001",
+    "kind": "unknown",
+    "statement": "확인할 사실을 작성하세요",
+    "source": {
+      "file": "",
+      "locator": ""
+    },
+    "quote": "",
+    "scope": "",
+    "valid_from": null,
+    "valid_to": null,
+    "based_on": []
+  }
+]

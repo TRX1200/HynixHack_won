@@ -1,0 +1,574 @@
+{
+  "version": "2.0.0",
+  "note": "Lexical Korean synonyms only. Ambiguous matches are NOT proof of applicability.",
+  "aliases": [
+    {
+      "phrases": [
+        "버스 노선",
+        "차량 경로",
+        "배차",
+        "다중 차량"
+      ],
+      "capability_ids": [
+        "vehicle-routing"
+      ]
+    },
+    {
+      "phrases": [
+        "순회",
+        "방문 순서",
+        "최단 순회"
+      ],
+      "capability_ids": [
+        "traveling-salesman"
+      ]
+    },
+    {
+      "phrases": [
+        "최단 경로",
+        "가중치 최단"
+      ],
+      "capability_ids": [
+        "weighted-shortest"
+      ]
+    },
+    {
+      "phrases": [
+        "음수 간선",
+        "음수 가중치"
+      ],
+      "capability_ids": [
+        "negative-shortest"
+      ]
+    },
+    {
+      "phrases": [
+        "단순 경로",
+        "간선 수",
+        "비가중 최단"
+      ],
+      "capability_ids": [
+        "unweighted-shortest"
+      ]
+    },
+    {
+      "phrases": [
+        "도보 시간",
+        "위도 경도",
+        "직선 거리"
+      ],
+      "capability_ids": [
+        "spatial-nearest"
+      ]
+    },
+    {
+      "phrases": [
+        "정류장 위치",
+        "지도 화면"
+      ],
+      "capability_ids": [
+        "ui-map"
+      ]
+    },
+    {
+      "phrases": [
+        "스케줄",
+        "근무표",
+        "시간표"
+      ],
+      "capability_ids": [
+        "resource-schedule"
+      ]
+    },
+    {
+      "phrases": [
+        "선후 관계",
+        "작업 순서"
+      ],
+      "capability_ids": [
+        "precedence-dag"
+      ]
+    },
+    {
+      "phrases": [
+        "최적화",
+        "교환",
+        "재배치",
+        "심화탐색"
+      ],
+      "capability_ids": [
+        "local-search"
+      ]
+    },
+    {
+      "phrases": [
+        "제약 충족",
+        "검증기",
+        "전수 검사"
+      ],
+      "capability_ids": [
+        "independent-validator"
+      ]
+    },
+    {
+      "phrases": [
+        "전역 최적",
+        "정수 변수",
+        "이진 변수"
+      ],
+      "capability_ids": [
+        "mixed-integer"
+      ]
+    },
+    {
+      "phrases": [
+        "재고 배정",
+        "용량 배정",
+        "다대일 배정"
+      ],
+      "capability_ids": [
+        "min-cost-flow"
+      ]
+    },
+    {
+      "phrases": [
+        "일대일 배정",
+        "매칭"
+      ],
+      "capability_ids": [
+        "bipartite-match"
+      ]
+    },
+    {
+      "phrases": [
+        "시설 입지",
+        "센터 개설"
+      ],
+      "capability_ids": [
+        "facility-location"
+      ]
+    },
+    {
+      "phrases": [
+        "예산 분배",
+        "연속 최적화"
+      ],
+      "capability_ids": [
+        "linear-programming"
+      ]
+    },
+    {
+      "phrases": [
+        "확률 변수",
+        "불확실성 최적화"
+      ],
+      "capability_ids": [
+        "stochastic-optimization"
+      ]
+    },
+    {
+      "phrases": [
+        "시나리오 분석",
+        "강건 최적화"
+      ],
+      "capability_ids": [
+        "robust-optimization"
+      ]
+    },
+    {
+      "phrases": [
+        "민감도 분석",
+        "가중치 변화"
+      ],
+      "capability_ids": [
+        "robust-optimization"
+      ]
+    },
+    {
+      "phrases": [
+        "웹서비스",
+        "웹앱",
+        "프론트엔드"
+      ],
+      "capability_ids": [
+        "frontend-static"
+      ]
+    },
+    {
+      "phrases": [
+        "관리자",
+        "운영자",
+        "권한 분리",
+        "로그인"
+      ],
+      "capability_ids": [
+        "role-access"
+      ]
+    },
+    {
+      "phrases": [
+        "백엔드",
+        "파이썬 API"
+      ],
+      "capability_ids": [
+        "api-python"
+      ]
+    },
+    {
+      "phrases": [
+        "자바스크립트 서버",
+        "노드 서버"
+      ],
+      "capability_ids": [
+        "api-node"
+      ]
+    },
+    {
+      "phrases": [
+        "API 계약",
+        "단위 검증",
+        "자료형"
+      ],
+      "capability_ids": [
+        "input-validation"
+      ]
+    },
+    {
+      "phrases": [
+        "서버 끊김",
+        "재접속",
+        "상태 복구"
+      ],
+      "capability_ids": [
+        "resilience-checkpoint"
+      ]
+    },
+    {
+      "phrases": [
+        "도커",
+        "컨테이너"
+      ],
+      "capability_ids": [
+        "container-choice"
+      ]
+    },
+    {
+      "phrases": [
+        "MCP 서버",
+        "외부 도구 연결"
+      ],
+      "capability_ids": [
+        "mcp-choice"
+      ]
+    },
+    {
+      "phrases": [
+        "멀티 에이전트",
+        "병렬 개발",
+        "서브에이전트"
+      ],
+      "capability_ids": [
+        "agent-boundaries"
+      ]
+    },
+    {
+      "phrases": [
+        "깃 클론",
+        "레포지토리 감사"
+      ],
+      "capability_ids": [
+        "repo-audit"
+      ]
+    },
+    {
+      "phrases": [
+        "업무담당자",
+        "불명확한 조건",
+        "가정 질문"
+      ],
+      "capability_ids": [
+        "stakeholder-questions"
+      ]
+    },
+    {
+      "phrases": [
+        "요구사항",
+        "명세서",
+        "README"
+      ],
+      "capability_ids": [
+        "intake-requirements"
+      ]
+    },
+    {
+      "phrases": [
+        "CSV 합치기",
+        "데이터 결합",
+        "조인"
+      ],
+      "capability_ids": [
+        "csv-join"
+      ]
+    },
+    {
+      "phrases": [
+        "결측",
+        "중복 값",
+        "데이터 정제"
+      ],
+      "capability_ids": [
+        "csv-clean"
+      ]
+    },
+    {
+      "phrases": [
+        "집계",
+        "분석 SQL",
+        "지표"
+      ],
+      "capability_ids": [
+        "sql-analytic"
+      ]
+    },
+    {
+      "phrases": [
+        "이미지 분석",
+        "결함 분석"
+      ],
+      "capability_ids": [
+        "image-compare"
+      ]
+    },
+    {
+      "phrases": [
+        "영상 정렬",
+        "이미지 정렬"
+      ],
+      "capability_ids": [
+        "image-registration"
+      ]
+    },
+    {
+      "phrases": [
+        "이미지 분할",
+        "객체 마스크"
+      ],
+      "capability_ids": [
+        "image-segmentation"
+      ]
+    },
+    {
+      "phrases": [
+        "사진 측정",
+        "픽셀 크기"
+      ],
+      "capability_ids": [
+        "image-measure"
+      ]
+    },
+    {
+      "phrases": [
+        "그림 생성",
+        "도식화",
+        "SVG"
+      ],
+      "capability_ids": [
+        "synthetic-graphic"
+      ]
+    },
+    {
+      "phrases": [
+        "통계 검정",
+        "유의성",
+        "신뢰구간"
+      ],
+      "capability_ids": [
+        "hypothesis-test"
+      ]
+    },
+    {
+      "phrases": [
+        "회귀 분석",
+        "예측 회귀"
+      ],
+      "capability_ids": [
+        "regression"
+      ]
+    },
+    {
+      "phrases": [
+        "시계열 예측",
+        "미래 데이터 예측"
+      ],
+      "capability_ids": [
+        "forecasting"
+      ]
+    },
+    {
+      "phrases": [
+        "분류 모델",
+        "분류 정확도"
+      ],
+      "capability_ids": [
+        "classification"
+      ]
+    },
+    {
+      "phrases": [
+        "이상 탐지",
+        "이상값"
+      ],
+      "capability_ids": [
+        "anomaly-detection"
+      ]
+    },
+    {
+      "phrases": [
+        "클러스터링",
+        "군집 분석"
+      ],
+      "capability_ids": [
+        "clustering"
+      ]
+    },
+    {
+      "phrases": [
+        "시뮬레이션",
+        "몬테카를로"
+      ],
+      "capability_ids": [
+        "simulation-montecarlo"
+      ]
+    },
+    {
+      "phrases": [
+        "부트스트랩",
+        "표본 재추출"
+      ],
+      "capability_ids": [
+        "bootstrap-ci"
+      ]
+    },
+    {
+      "phrases": [
+        "인과 추론",
+        "원인 효과"
+      ],
+      "capability_ids": [
+        "causal-evaluation"
+      ]
+    },
+    {
+      "phrases": [
+        "수식 계산",
+        "기호 수학",
+        "미분 적분"
+      ],
+      "capability_ids": [
+        "physics-symbolic"
+      ]
+    },
+    {
+      "phrases": [
+        "단위 환산",
+        "차원 검사"
+      ],
+      "capability_ids": [
+        "physics-units"
+      ]
+    },
+    {
+      "phrases": [
+        "미분방정식",
+        "상미분방정식"
+      ],
+      "capability_ids": [
+        "physics-ode"
+      ]
+    },
+    {
+      "phrases": [
+        "편미분방정식",
+        "경계조건"
+      ],
+      "capability_ids": [
+        "physics-pde"
+      ]
+    },
+    {
+      "phrases": [
+        "FFT",
+        "푸리에 변환",
+        "신호처리"
+      ],
+      "capability_ids": [
+        "signal-processing"
+      ]
+    },
+    {
+      "phrases": [
+        "논문 PDF",
+        "문서 추출"
+      ],
+      "capability_ids": [
+        "pdf-extraction"
+      ]
+    },
+    {
+      "phrases": [
+        "문서 검색",
+        "규정 검색",
+        "근거 검색"
+      ],
+      "capability_ids": [
+        "text-index"
+      ]
+    },
+    {
+      "phrases": [
+        "리포트",
+        "보고서 생성"
+      ],
+      "capability_ids": [
+        "report-provenance"
+      ]
+    },
+    {
+      "phrases": [
+        "그래프",
+        "차트",
+        "시각화"
+      ],
+      "capability_ids": [
+        "ui-chart"
+      ]
+    },
+    {
+      "phrases": [
+        "UI 수동 검증",
+        "화면 테스트"
+      ],
+      "capability_ids": [
+        "ui-test-matrix"
+      ]
+    },
+    {
+      "phrases": [
+        "성능 비교",
+        "벤치마크"
+      ],
+      "capability_ids": [
+        "benchmark-design"
+      ]
+    },
+    {
+      "phrases": [
+        "이미지 OCR",
+        "문자인식"
+      ],
+      "capability_ids": [
+        "ocr-read"
+      ]
+    }
+  ]
+}

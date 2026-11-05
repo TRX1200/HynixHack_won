@@ -1,0 +1,36 @@
+{
+  "_synthetic": true,
+  "id": "synth-route",
+  "summary": "Plan paths for a synthetic vehicle fleet with capacities and multiple stops",
+  "task_types": [
+    "optimization",
+    "geospatial"
+  ],
+  "signals": [
+    "vrp",
+    "vehicle",
+    "route",
+    "time window",
+    "2-opt",
+    "fleet",
+    "capacity"
+  ],
+  "objective": {
+    "sense": "min",
+    "metric": "total travel time",
+    "units": "minutes"
+  },
+  "hard_constraints": [
+    "all stops visited",
+    "vehicle loads within limit"
+  ],
+  "environment": {
+    "network_allowed": false,
+    "optimality_required": false
+  },
+  "properties": {
+    "problem_structure": "routing",
+    "vehicle_count": "multiple",
+    "travel_cost_directional": true
+  }
+}

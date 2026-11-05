@@ -1,0 +1,427 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Strict advisory ProblemProfile; missing facts remain unknown",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 20000,
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 20000
+    },
+    "_synthetic": {
+      "type": "boolean"
+    },
+    "task_types": {
+      "type": "array",
+      "maxItems": 11,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "web_app",
+          "data_pipeline",
+          "optimization",
+          "statistics_ml",
+          "computer_vision",
+          "scientific_computing",
+          "documents_search",
+          "geospatial",
+          "reporting",
+          "integration",
+          "quality_security"
+        ]
+      }
+    },
+    "signals": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "hard_constraints": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "soft_constraints": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "required_capabilities": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "user_roles": {
+      "type": "array",
+      "maxItems": 200,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      }
+    },
+    "objective": {
+      "type": "object",
+      "properties": {
+        "sense": {
+          "type": "string",
+          "enum": [
+            "min",
+            "max",
+            "feasibility",
+            "unknown"
+          ]
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "units": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "tradeoffs": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "sampling_unit": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "split_rule": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "metrics": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        },
+        "uncertainty": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "label_available": {
+          "type": "boolean"
+        },
+        "target": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 20000
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "formats": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        },
+        "rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "keys": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        },
+        "grain": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "size_notes": {
+          "type": "string",
+          "maxLength": 20000
+        }
+      },
+      "additionalProperties": false
+    },
+    "performance": {
+      "type": "object",
+      "properties": {
+        "time_budget_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "memory_mb": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "network_allowed": {
+          "type": "boolean"
+        },
+        "optimality_required": {
+          "type": "boolean"
+        },
+        "docker_available": {
+          "type": "boolean"
+        },
+        "docker_authorized": {
+          "type": "boolean"
+        },
+        "python_available": {
+          "type": "boolean"
+        },
+        "node_available": {
+          "type": "boolean"
+        },
+        "mcp_available": {
+          "type": "boolean"
+        },
+        "library_inventory_complete": {
+          "type": "boolean"
+        },
+        "sqlite_fts5_available": {
+          "type": "boolean"
+        },
+        "existing_stack": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "installed_libraries": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        },
+        "unavailable_libraries": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          }
+        },
+        "operating_system": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "deployment_target": {
+          "type": "string",
+          "maxLength": 20000
+        }
+      },
+      "additionalProperties": false
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "problem_structure": {
+          "type": "string",
+          "enum": [
+            "shortest_path",
+            "assignment",
+            "facility_location",
+            "routing",
+            "scheduling",
+            "resource_allocation",
+            "knapsack",
+            "unknown"
+          ]
+        },
+        "edge_weight_type": {
+          "type": "string",
+          "enum": [
+            "unweighted",
+            "nonnegative",
+            "may_be_negative",
+            "unknown"
+          ]
+        },
+        "capacity_model": {
+          "type": "string",
+          "enum": [
+            "one_to_one",
+            "many_to_one",
+            "unknown"
+          ]
+        },
+        "vehicle_count": {
+          "type": "string",
+          "enum": [
+            "one",
+            "multiple",
+            "unknown"
+          ]
+        },
+        "decision_variable_type": {
+          "type": "string",
+          "enum": [
+            "continuous",
+            "integer",
+            "boolean",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "uncertainty_model": {
+          "type": "string",
+          "enum": [
+            "scenarios",
+            "probability",
+            "unknown"
+          ]
+        },
+        "task_subtype": {
+          "type": "string",
+          "enum": [
+            "time_series_forecast",
+            "classification",
+            "regression",
+            "hypothesis_test",
+            "image_comparison",
+            "segmentation",
+            "ode",
+            "pde",
+            "policy_retrieval",
+            "unknown"
+          ]
+        },
+        "frontend_complexity": {
+          "type": "string",
+          "enum": [
+            "simple",
+            "stateful",
+            "unknown"
+          ]
+        },
+        "travel_cost_directional": {
+          "type": "boolean"
+        },
+        "has_resource_constraints": {
+          "type": "boolean"
+        },
+        "requires_role_authorization": {
+          "type": "boolean"
+        },
+        "requires_api_calculation": {
+          "type": "boolean"
+        },
+        "network_allowed": {
+          "type": "boolean"
+        },
+        "docker_available": {
+          "type": "boolean"
+        },
+        "linear_model_confirmed": {
+          "type": "boolean"
+        },
+        "interval_model_confirmed": {
+          "type": "boolean"
+        },
+        "has_negative_edges": {
+          "type": "boolean"
+        },
+        "repeated_structured_invocations": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

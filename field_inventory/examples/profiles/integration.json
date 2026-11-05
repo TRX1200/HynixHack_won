@@ -1,0 +1,21 @@
+{
+  "_synthetic": true,
+  "id": "synth-integrate",
+  "summary": "Cross-language producer and consumer exchange records through JSON, preserving IDs and units",
+  "task_types": [
+    "integration",
+    "web_app"
+  ],
+  "signals": [
+    "api contract",
+    "json",
+    "null",
+    "ids",
+    "units",
+    "python",
+    "javascript"
+  ],
+  "deliverables": [
+    "working API UI"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "calculator": "arrhenius",
+  "activation_energy_ev": 0.5,
+  "temperature_1_k": 300,
+  "temperature_2_k": 600
+}

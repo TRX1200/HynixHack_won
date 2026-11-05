@@ -1,0 +1,7 @@
+{
+  "calculator": "thin_film",
+  "resistivity_ohm_m": 1e-6,
+  "length_m": 0.001,
+  "width_m": 0.0001,
+  "thickness_m": 1e-6
+}

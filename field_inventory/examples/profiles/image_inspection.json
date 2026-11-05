@@ -1,0 +1,26 @@
+{
+  "_synthetic": true,
+  "id": "synth-image",
+  "summary": "Compare two synthetic images for alignment and geometry measurement; show bounded region boxes",
+  "task_types": [
+    "computer_vision",
+    "reporting"
+  ],
+  "signals": [
+    "registration",
+    "align",
+    "threshold",
+    "image compare",
+    "bounding box"
+  ],
+  "deliverables": [
+    "annotated image",
+    "measurement report"
+  ],
+  "unknowns": [
+    "physical pixel-to-mm calibration not provided"
+  ],
+  "properties": {
+    "task_subtype": "image_comparison"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "제목을 작성하세요",
+  "summary": "미작성",
+  "scope": "미작성",
+  "findings": [],
+  "method": [],
+  "validation": [],
+  "limitations": [
+    "아직 검증 내용을 입력하지 않았습니다."
+  ],
+  "next_actions": [],
+  "sources": []
+}

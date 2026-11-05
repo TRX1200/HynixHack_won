@@ -1,0 +1,17 @@
+{
+  "_synthetic": true,
+  "id": "synth-analytics",
+  "summary": "Report statistically significant difference between independent groups using a proper estimation design",
+  "task_types": [
+    "statistics_ml"
+  ],
+  "signals": [
+    "p value",
+    "confidence interval",
+    "sample size",
+    "hypothesis test"
+  ],
+  "deliverables": [
+    "short analytical report"
+  ]
+}

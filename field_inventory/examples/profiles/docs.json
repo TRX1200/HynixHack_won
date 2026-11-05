@@ -1,0 +1,22 @@
+{
+  "_synthetic": true,
+  "id": "synth-docs",
+  "summary": "Retrieve applicable policies from dated synthetic rule documents with accurate citations",
+  "task_types": [
+    "documents_search",
+    "data_pipeline"
+  ],
+  "signals": [
+    "document",
+    "policy",
+    "citation",
+    "version",
+    "missing rule"
+  ],
+  "deliverables": [
+    "evidence report"
+  ],
+  "properties": {
+    "task_subtype": "policy_retrieval"
+  }
+}

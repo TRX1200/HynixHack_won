@@ -1,0 +1,53 @@
+{
+  "_synthetic": true,
+  "id": "synth-composite",
+  "summary": "Small entirely synthetic service with a browser UI, server-side role checks, CSV joins, and a constrained allocation calculation.",
+  "task_types": [
+    "web_app",
+    "data_pipeline",
+    "optimization",
+    "quality_security"
+  ],
+  "signals": [
+    "login",
+    "admin",
+    "role",
+    "API contract",
+    "capacity",
+    "assignment",
+    "cost",
+    "join",
+    "csv",
+    "verify"
+  ],
+  "hard_constraints": [
+    "each synthetic record assigned at most once",
+    "assignment capacity respected"
+  ],
+  "deliverables": [
+    "web UI",
+    "API",
+    "assignment report"
+  ],
+  "unknowns": [
+    "capacity rules may depend on stakeholder"
+  ],
+  "user_roles": [
+    "viewer",
+    "admin"
+  ],
+  "environment": {
+    "existing_stack": "",
+    "installed_libraries": [
+      "Python stdlib"
+    ],
+    "network_allowed": false,
+    "optimality_required": false
+  },
+  "properties": {
+    "requires_role_authorization": true,
+    "requires_api_calculation": true,
+    "problem_structure": "assignment",
+    "capacity_model": "many_to_one"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "_synthetic": true,
+  "id": "synth-ode",
+  "summary": "Solve an RC first-order dynamic system and visualize its response",
+  "task_types": [
+    "scientific_computing",
+    "reporting"
+  ],
+  "signals": [
+    "ode",
+    "differential equation",
+    "initial condition",
+    "time response",
+    "physical units"
+  ],
+  "hard_constraints": [
+    "initial condition checked",
+    "unit consistency"
+  ],
+  "properties": {
+    "task_subtype": "ode"
+  }
+}

@@ -1,0 +1,2334 @@
+{
+  "version": "2.0.0",
+  "schema_version": 1,
+  "note": "Curated advisory inventory; runtime availability and suitability require verification. No model/solver capabilities are installed by this catalog.",
+  "capabilities": [
+    {
+      "id": "intake-requirements",
+      "family": "orchestration",
+      "task_types": [
+        "all"
+      ],
+      "title": "Requirements and unknowns extraction",
+      "signals": [
+        "readme",
+        "ambiguous requirement",
+        "missing rule",
+        "stakeholder",
+        "business process"
+      ],
+      "baseline": "Facts/Unknowns/Assumptions/Out of scope matrix",
+      "upgrade": "Question ledger with source spans",
+      "verification": "Every requirement has provenance and acceptance criterion",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Markdown table",
+      "warning": "Never hallucinate unstated business constraints",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "stakeholder-questions",
+      "family": "orchestration",
+      "task_types": [
+        "all"
+      ],
+      "title": "Stakeholder question prioritizer",
+      "signals": [
+        "ask hr",
+        "unclear requirement",
+        "policy exception",
+        "ambiguous term"
+      ],
+      "baseline": "Blocker vs nonblocker questions, grouped by decision impact",
+      "upgrade": "Impact-of-uncertainty map",
+      "verification": "Each answered question changes explicit requirement or is marked no-impact",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Manual decision log",
+      "warning": "Do not ask questions already answered in provided files",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "agent-boundaries",
+      "family": "orchestration",
+      "task_types": [
+        "web_app",
+        "optimization",
+        "data_pipeline"
+      ],
+      "title": "Agent task partition and handoff",
+      "signals": [
+        "parallel",
+        "subagent",
+        "frontend backend",
+        "reviewer",
+        "handoff"
+      ],
+      "baseline": "Owner files and stable contracts before parallel work",
+      "upgrade": "Independent reviewer plus recorder",
+      "verification": "No overlapping writes, interface integration test",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Sequential phases",
+      "warning": "More agents may slow or conflict; count active workers",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "repo-audit",
+      "family": "orchestration",
+      "task_types": [
+        "all"
+      ],
+      "title": "Existing repository audit",
+      "signals": [
+        "git",
+        "clone",
+        "existing code",
+        "reuse",
+        "workspace"
+      ],
+      "baseline": "Read repo layout, docs, tests, locked dependencies",
+      "upgrade": "Minimal change plan with risk inventory",
+      "verification": "Baseline tests saved and diffs reviewed",
+      "libraries": [
+        "Git",
+        "Python stdlib"
+      ],
+      "fallback": "File tree manual",
+      "warning": "Never overwrite unrelated work or guess Git remote",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "progress-checkpoint",
+      "family": "orchestration",
+      "task_types": [
+        "all"
+      ],
+      "title": "Resumable session state",
+      "signals": [
+        "crash",
+        "reconnect",
+        "state",
+        "progress",
+        "deadline"
+      ],
+      "baseline": "TASK_STATE and evidence log",
+      "upgrade": "Automated checkpoint on milestones",
+      "verification": "Cold-read resume test from state only",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Markdown checkpoint",
+      "warning": "Do not claim a save occurred unless confirmed",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "feasible-scope",
+      "family": "orchestration",
+      "task_types": [
+        "all"
+      ],
+      "title": "Time-budgeted delivery sizing",
+      "signals": [
+        "deadline",
+        "timebox",
+        "time pressure",
+        "minimum viable"
+      ],
+      "baseline": "Minimum vertical slice plus smoke test",
+      "upgrade": "High-value branches after first working result",
+      "verification": "Core use case demonstrable before polish",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Manual priority board",
+      "warning": "Do not sacrifice critical correctness for decoration",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "frontend-static",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "reporting"
+      ],
+      "title": "Minimal static interface",
+      "signals": [
+        "browser",
+        "ui",
+        "interactive",
+        "forms",
+        "frontend"
+      ],
+      "baseline": "Vanilla JS with HTML/CSS and stable data interface",
+      "upgrade": "React or TypeScript when existing project supports it",
+      "verification": "Input, visible result, error, keyboard smoke",
+      "libraries": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "fallback": "Server-rendered HTML",
+      "warning": "Static mock cannot claim backend functionality",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "frontend-react",
+      "family": "web",
+      "task_types": [
+        "web_app"
+      ],
+      "title": "Component UI with state",
+      "signals": [
+        "react",
+        "component",
+        "state",
+        "router",
+        "multi page"
+      ],
+      "baseline": "Use existing React setup and component tree",
+      "upgrade": "Typed state, E2E tests",
+      "verification": "UI flow and state transition tests",
+      "libraries": [
+        "React",
+        "TypeScript"
+      ],
+      "fallback": "Vanilla JS",
+      "warning": "Do not add build tooling if no requirement",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "api-python",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "integration"
+      ],
+      "title": "Python computation API",
+      "signals": [
+        "backend",
+        "python",
+        "api",
+        "http",
+        "calculate"
+      ],
+      "baseline": "Small FastAPI routes with typed data",
+      "upgrade": "Pydantic validation, auth, structured errors",
+      "verification": "200/400/401/403/404/500 and schema contract",
+      "libraries": [
+        "FastAPI",
+        "Pydantic"
+      ],
+      "fallback": "Python http.server for simple demo",
+      "warning": "Dev server not production-grade authentication",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "api-node",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "integration"
+      ],
+      "title": "Node computation API",
+      "signals": [
+        "backend",
+        "node",
+        "express",
+        "api",
+        "javascript"
+      ],
+      "baseline": "Native Node HTTP or existing Express framework",
+      "upgrade": "Schema validation and typed route handlers",
+      "verification": "Invalid payload/error path and integration tests",
+      "libraries": [
+        "Node.js",
+        "Express",
+        "Ajv"
+      ],
+      "fallback": "Node.js HTTP",
+      "warning": "Do not mix runtimes without a real boundary need",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "browser-only-calculation",
+      "family": "web",
+      "task_types": [
+        "web_app"
+      ],
+      "title": "Client-only deterministic calculator",
+      "signals": [
+        "offline",
+        "calculator",
+        "browser only",
+        "single page",
+        "small dataset"
+      ],
+      "baseline": "Pure JS function + UI",
+      "upgrade": "Worker for heavy CPU with explicit cancellation",
+      "verification": "Property checks and consistent results",
+      "libraries": [
+        "JavaScript"
+      ],
+      "fallback": "Python CLI + generated HTML",
+      "warning": "Do not place secrets or privileged rules client-side",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "role-access",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "quality_security"
+      ],
+      "title": "Role-based authorization",
+      "signals": [
+        "login",
+        "admin",
+        "employee",
+        "permissions",
+        "roles"
+      ],
+      "baseline": "Server-side identity and role checks",
+      "upgrade": "Session expiration and unauthorized tests",
+      "verification": "401/403 checks on protected APIs independent of UI",
+      "libraries": [
+        "FastAPI",
+        "Flask",
+        "Express"
+      ],
+      "fallback": "Preserve and verify the existing server-side authorization. If it cannot be implemented or executed, report NOT_RUN or BLOCKED; do not replace it with a mock UI.",
+      "warning": "Two login pages, a mock role UI, or a security demo do not establish real server authorization. A failed unauthorized-access check is FAIL, not a completed fallback.",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "input-validation",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "integration",
+        "data_pipeline"
+      ],
+      "title": "Cross-language input contracts",
+      "signals": [
+        "api contract",
+        "json",
+        "schema",
+        "null",
+        "ids",
+        "units"
+      ],
+      "baseline": "Explicit JSON schema, reject invalid fields",
+      "upgrade": "Runtime validators and contract tests",
+      "verification": "Version ID unit/null/NaN/boolean tests",
+      "libraries": [
+        "Pydantic",
+        "Ajv",
+        "jsonschema"
+      ],
+      "fallback": "Hand-written stdlib validation",
+      "warning": "TypeScript types do not validate runtime JSON",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "storage-sqlite",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "data_pipeline"
+      ],
+      "title": "Local persistent records",
+      "signals": [
+        "persistence",
+        "database",
+        "sqlite",
+        "crud"
+      ],
+      "baseline": "SQLite with parameterized queries",
+      "upgrade": "Migrations, indices, transactions",
+      "verification": "Reopen persistence and concurrent write tests",
+      "libraries": [
+        "sqlite3",
+        "SQLAlchemy"
+      ],
+      "fallback": "Append-only JSONL when tiny",
+      "warning": "Concurrent writes need transaction discipline",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "realtime-progress",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "integration"
+      ],
+      "title": "Long operation progress",
+      "signals": [
+        "progress bar",
+        "long job",
+        "async",
+        "cancel"
+      ],
+      "baseline": "Async job ID + polling",
+      "upgrade": "SSE if justified",
+      "verification": "No hanging request; cancellation and retry",
+      "libraries": [
+        "FastAPI",
+        "JavaScript"
+      ],
+      "fallback": "Synchronous bounded call",
+      "warning": "Never pretend a background job is complete",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "ui-visual-qa",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "reporting"
+      ],
+      "title": "Visual/interaction smoke testing",
+      "signals": [
+        "browser",
+        "css",
+        "responsive",
+        "click",
+        "form",
+        "mobile"
+      ],
+      "baseline": "Manual in-browser end-to-end walkthrough",
+      "upgrade": "Automated Playwright when permitted",
+      "verification": "Input→API→calculation→render on real browser",
+      "libraries": [
+        "Playwright"
+      ],
+      "fallback": "Manual checklist",
+      "warning": "Do not use GUI automation when competition forbids it",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "ui-map",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "geospatial"
+      ],
+      "title": "Coordinate map and markers",
+      "signals": [
+        "map",
+        "latitude",
+        "longitude",
+        "marker",
+        "route",
+        "spatial"
+      ],
+      "baseline": "SVG coordinate overlay on local schematic",
+      "upgrade": "Leaflet with already available tiles/assets",
+      "verification": "Coordinate bounds and click-to-ID mapping",
+      "libraries": [
+        "Leaflet",
+        "JavaScript"
+      ],
+      "fallback": "SVG scatter plot",
+      "warning": "External basemap network can be prohibited",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "ui-chart",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "reporting",
+        "statistics_ml"
+      ],
+      "title": "Exploratory data chart",
+      "signals": [
+        "dashboard",
+        "chart",
+        "interactive",
+        "line",
+        "histogram"
+      ],
+      "baseline": "Plotly or static SVG with units",
+      "upgrade": "D3/Vega-Lite for special grammar",
+      "verification": "Axis units missing values and selection smoke",
+      "libraries": [
+        "Plotly",
+        "D3",
+        "Vega-Lite"
+      ],
+      "fallback": "Matplotlib PNG or native SVG",
+      "warning": "Chart polish cannot substitute data correctness",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "web-export",
+      "family": "web",
+      "task_types": [
+        "web_app",
+        "reporting"
+      ],
+      "title": "Export consistent artifacts",
+      "signals": [
+        "download",
+        "csv export",
+        "pdf",
+        "save result"
+      ],
+      "baseline": "JSON/CSV with deterministic naming",
+      "upgrade": "PDF/HTML after contract established",
+      "verification": "Export re-import roundtrip and content comparison",
+      "libraries": [
+        "Python stdlib",
+        "Matplotlib"
+      ],
+      "fallback": "Text/CSV",
+      "warning": "Downloaded result must match visible UI state",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "file-ingestion",
+      "family": "data",
+      "task_types": [
+        "data_pipeline"
+      ],
+      "title": "File inventory and schema profiling",
+      "signals": [
+        "csv",
+        "json",
+        "file upload",
+        "dataset",
+        "folder"
+      ],
+      "baseline": "File manifest, type/sample row counts",
+      "upgrade": "Strict parsing with errors per file",
+      "verification": "Missing/encoding/empty/header test",
+      "libraries": [
+        "csv",
+        "json",
+        "pathlib"
+      ],
+      "fallback": "Manual inspection",
+      "warning": "No guessing of column semantics",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "csv-join",
+      "family": "data",
+      "task_types": [
+        "data_pipeline"
+      ],
+      "title": "Multi-table joins and key checks",
+      "signals": [
+        "join",
+        "multiple csv",
+        "mapping",
+        "foreign key",
+        "master data"
+      ],
+      "baseline": "Validate unique keys, cardinality and missing matches",
+      "upgrade": "DuckDB/pandas with provenance flags",
+      "verification": "Unmatched keys, join explosion, duplicates",
+      "libraries": [
+        "pandas",
+        "DuckDB"
+      ],
+      "fallback": "csv and sqlite3",
+      "warning": "Never silently inner-join away missing rows",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "csv-clean",
+      "family": "data",
+      "task_types": [
+        "data_pipeline"
+      ],
+      "title": "Missing/duplicate/outlier cleaning",
+      "signals": [
+        "dirty",
+        "missing",
+        "null",
+        "duplicate",
+        "invalid",
+        "data quality"
+      ],
+      "baseline": "Data quality report before mutation",
+      "upgrade": "Rule-driven transformations with audit trail",
+      "verification": "Before/after counts and immutable raw source",
+      "libraries": [
+        "pandas",
+        "polars"
+      ],
+      "fallback": "Python csv",
+      "warning": "Do not invent replacement values",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "json-normalize",
+      "family": "data",
+      "task_types": [
+        "data_pipeline",
+        "integration"
+      ],
+      "title": "Nested JSON normalization",
+      "signals": [
+        "json",
+        "nested",
+        "records",
+        "api response"
+      ],
+      "baseline": "Explicit flattening with full parent IDs",
+      "upgrade": "Schema validated nested relations",
+      "verification": "Roundtrip IDs and array multiplicity",
+      "libraries": [
+        "Python stdlib",
+        "pandas"
+      ],
+      "fallback": "JSON Lines",
+      "warning": "Flattening may duplicate records",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "sql-analytic",
+      "family": "data",
+      "task_types": [
+        "data_pipeline",
+        "reporting"
+      ],
+      "title": "Analytical SQL and grouping",
+      "signals": [
+        "aggregate",
+        "group by",
+        "sql",
+        "warehouse"
+      ],
+      "baseline": "SQLite or DuckDB query with explicit grain",
+      "upgrade": "Window functions on tested grain",
+      "verification": "Conservation of counts, null semantics",
+      "libraries": [
+        "DuckDB",
+        "sqlite3"
+      ],
+      "fallback": "pandas groupby",
+      "warning": "SQL joins can inflate denominators",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "etl-batch",
+      "family": "data",
+      "task_types": [
+        "data_pipeline",
+        "integration"
+      ],
+      "title": "Deterministic ETL pipeline",
+      "signals": [
+        "etl",
+        "pipeline",
+        "transform",
+        "source target"
+      ],
+      "baseline": "Idempotent staged transforms",
+      "upgrade": "Incremental checkpoints and replay",
+      "verification": "Repeat run equal hash, failure recovery",
+      "libraries": [
+        "Python stdlib",
+        "pandas"
+      ],
+      "fallback": "Small CLI scripts",
+      "warning": "Do not mutate source data",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "text-index",
+      "family": "data",
+      "task_types": [
+        "documents_search"
+      ],
+      "title": "Local text search",
+      "signals": [
+        "document",
+        "policy",
+        "lookup",
+        "search",
+        "citation"
+      ],
+      "baseline": "Literal search with source offsets",
+      "upgrade": "BM25/FTS5 for more documents",
+      "verification": "Quoted evidence resolves to real source span",
+      "libraries": [
+        "sqlite3"
+      ],
+      "fallback": "ripgrep",
+      "warning": "Search absence is not proof of absence",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "semantic-retrieval",
+      "family": "data",
+      "task_types": [
+        "documents_search"
+      ],
+      "title": "Semantic document retrieval",
+      "signals": [
+        "semantic",
+        "embedding",
+        "retrieval",
+        "rag"
+      ],
+      "baseline": "Token/FTS retrieval without model",
+      "upgrade": "Embeddings only if approved local model exists",
+      "verification": "Recall tests with relevant synthetic passages",
+      "libraries": [
+        "sqlite3",
+        "rank_bm25"
+      ],
+      "fallback": "FTS keyword",
+      "warning": "External embedding API forbidden if cannot export data",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "spatial-nearest",
+      "family": "data",
+      "task_types": [
+        "geospatial",
+        "optimization"
+      ],
+      "title": "Nearest coordinate candidates",
+      "signals": [
+        "nearest",
+        "latitude",
+        "longitude",
+        "walking",
+        "stop",
+        "distance"
+      ],
+      "baseline": "Haversine for straight-line geographic distance",
+      "upgrade": "Road-network routing if supplied or permitted",
+      "verification": "Bounds, symmetry and coordinate sanity",
+      "libraries": [
+        "math",
+        "numpy"
+      ],
+      "fallback": "Pure Python math",
+      "warning": "Haversine not walk/driving network distance",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "spatial-cluster",
+      "family": "data",
+      "task_types": [
+        "geospatial",
+        "statistics_ml"
+      ],
+      "title": "Spatial clustering",
+      "signals": [
+        "cluster",
+        "geo",
+        "location",
+        "spatial demand"
+      ],
+      "baseline": "Fixed radius groups with geographic units",
+      "upgrade": "DBSCAN/HDBSCAN with calibrated metric",
+      "verification": "Cluster stability and outlier tests",
+      "libraries": [
+        "scikit-learn",
+        "scipy"
+      ],
+      "fallback": "Greedy fixed radius",
+      "warning": "Coordinate degrees are not meters",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "network-graph",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Graph modeling primitives",
+      "signals": [
+        "nodes",
+        "edges",
+        "directed",
+        "graph",
+        "network"
+      ],
+      "baseline": "Adjacency list and explicit weights",
+      "upgrade": "NetworkX when preinstalled",
+      "verification": "Reachability, duplicate node and asymmetric edges",
+      "libraries": [
+        "NetworkX"
+      ],
+      "fallback": "Python dict lists",
+      "warning": "Do not infer missing edges",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "unweighted-shortest",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Unweighted shortest path",
+      "signals": [
+        "shortest path",
+        "unweighted",
+        "hops",
+        "bfs"
+      ],
+      "baseline": "BFS",
+      "upgrade": "Bidirectional BFS",
+      "verification": "Path edge count versus exhaustive tiny graph",
+      "libraries": [
+        "collections.deque"
+      ],
+      "fallback": "Python stdlib",
+      "warning": "Use Dijkstra when weights differ",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "weighted-shortest",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Nonnegative weighted shortest path",
+      "signals": [
+        "dijkstra",
+        "weighted graph",
+        "route",
+        "cost",
+        "no negative"
+      ],
+      "baseline": "Dijkstra",
+      "upgrade": "A* with admissible heuristic",
+      "verification": "Path connectivity and independently recomputed cost",
+      "libraries": [
+        "heapq",
+        "NetworkX"
+      ],
+      "fallback": "Python heapq",
+      "warning": "Negative edges invalidate Dijkstra",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "negative-shortest",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Shortest paths with negative edges",
+      "signals": [
+        "negative weights",
+        "bellman ford",
+        "negative cycle"
+      ],
+      "baseline": "Bellman-Ford with cycle detection",
+      "upgrade": "Johnson for multiple sources",
+      "verification": "Negative-cycle case and finite path costs",
+      "libraries": [
+        "NetworkX"
+      ],
+      "fallback": "Python loops",
+      "warning": "Negative cycles mean no finite shortest path",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "max-flow",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Maximum feasible flow",
+      "signals": [
+        "flow",
+        "capacity",
+        "throughput",
+        "network flow"
+      ],
+      "baseline": "Edmonds-Karp on small graphs",
+      "upgrade": "Dinic/NetworkX",
+      "verification": "Capacity and flow conservation",
+      "libraries": [
+        "maxflow",
+        "NetworkX"
+      ],
+      "fallback": "Simple augmenting paths",
+      "warning": "Do not confuse min-cost and max-flow",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "min-cost-flow",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Capacitated allocation as min-cost flow",
+      "signals": [
+        "assignment",
+        "capacity",
+        "cost",
+        "many to one",
+        "flow"
+      ],
+      "baseline": "Greedy feasible assignment",
+      "upgrade": "Min-cost flow algorithm",
+      "verification": "Supply/demand conservation and capacity",
+      "libraries": [
+        "OR-Tools",
+        "NetworkX"
+      ],
+      "fallback": "Greedy + repair",
+      "warning": "Requires correct graph construction and integrality",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "bipartite-match",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "One-to-one weighted assignment",
+      "signals": [
+        "matching",
+        "worker task",
+        "one to one",
+        "matrix"
+      ],
+      "baseline": "Greedy valid pairing",
+      "upgrade": "Hungarian or linear_sum_assignment",
+      "verification": "One-to-one and cost oracle on small n",
+      "libraries": [
+        "scipy.optimize"
+      ],
+      "fallback": "Small exhaustive search",
+      "warning": "Do not apply one-to-one matching to capacities >1 directly",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "knapsack",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Budget-constrained item selection",
+      "signals": [
+        "budget",
+        "capacity",
+        "item selection",
+        "knapsack"
+      ],
+      "baseline": "Ratio greedy as baseline",
+      "upgrade": "Dynamic programming or MILP",
+      "verification": "No budget excess and small exhaustive oracle",
+      "libraries": [
+        "OR-Tools",
+        "scipy.optimize"
+      ],
+      "fallback": "DP in stdlib",
+      "warning": "Ratio greedy not exact for 0/1 knapsack",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "interval-schedule",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Nonoverlapping interval selection",
+      "signals": [
+        "interval",
+        "appointments",
+        "time conflicts",
+        "room"
+      ],
+      "baseline": "Earliest finish greedy if objective is max count",
+      "upgrade": "Weighted interval scheduling DP",
+      "verification": "No overlaps and small exhaustive oracle",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Simple sorted loops",
+      "warning": "Greedy earliest finish fails for weighted case",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "precedence-dag",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Precedence and critical path",
+      "signals": [
+        "dependency",
+        "ordering",
+        "task DAG",
+        "prerequisite"
+      ],
+      "baseline": "Topological sort with cycle detection",
+      "upgrade": "Critical path for DAG durations",
+      "verification": "Every prerequisite precedes dependent task",
+      "libraries": [
+        "graphlib"
+      ],
+      "fallback": "Custom DFS",
+      "warning": "Topological sort alone does not optimize resources",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "resource-schedule",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Resource-constrained scheduling",
+      "signals": [
+        "shift",
+        "machine",
+        "capacity",
+        "precedence",
+        "time window"
+      ],
+      "baseline": "Feasible greedy scheduler",
+      "upgrade": "CP-SAT/MILP where available",
+      "verification": "No overlap, time windows, capacity, precedence",
+      "libraries": [
+        "OR-Tools"
+      ],
+      "fallback": "Greedy + checker",
+      "warning": "Greedy schedule may have poor makespan",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "traveling-salesman",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Single route visit ordering",
+      "signals": [
+        "tsp",
+        "visit all",
+        "route order",
+        "stops",
+        "single vehicle"
+      ],
+      "baseline": "Nearest-neighbor feasible route",
+      "upgrade": "2-opt, swap, multistart",
+      "verification": "Each required stop visited once; exact small n DP",
+      "libraries": [
+        "OR-Tools",
+        "NetworkX"
+      ],
+      "fallback": "Python lists",
+      "warning": "2-opt reversing segment must recompute asymmetric edge costs",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "vehicle-routing",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Multi-vehicle capacity and time-window routes",
+      "signals": [
+        "vrp",
+        "fleet",
+        "bus",
+        "vehicle",
+        "capacity",
+        "pickup",
+        "time window"
+      ],
+      "baseline": "Feasible insertion with hard checks",
+      "upgrade": "Relocate/swap/LNS, OR-Tools Routing",
+      "verification": "All demands, vehicle loads, timing, route starts",
+      "libraries": [
+        "OR-Tools"
+      ],
+      "fallback": "Greedy + local search",
+      "warning": "Routing is not merely TSP; constraints may dominate",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "facility-location",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Facility or pickup point selection",
+      "signals": [
+        "facility",
+        "site selection",
+        "warehouse",
+        "stations",
+        "stops"
+      ],
+      "baseline": "Nearest open candidate assignment",
+      "upgrade": "Open/close+reassignment and MILP",
+      "verification": "Facility-open link, capacity, coverage",
+      "libraries": [
+        "OR-Tools",
+        "scipy.optimize"
+      ],
+      "fallback": "Greedy + repair",
+      "warning": "Unserved demand should not silently disappear",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "linear-programming",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Linear continuous allocation",
+      "signals": [
+        "linear",
+        "continuous",
+        "budget",
+        "resource mix"
+      ],
+      "baseline": "Feasible LP specification",
+      "upgrade": "HiGHS via scipy.linprog",
+      "verification": "Primal constraints, duality gap/status if available",
+      "libraries": [
+        "scipy.optimize"
+      ],
+      "fallback": "Small corner enumeration only if tiny",
+      "warning": "Integer choices invalidate continuous relaxation as final answer",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "mixed-integer",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Mixed discrete and continuous decisions",
+      "signals": [
+        "integer",
+        "binary",
+        "budget",
+        "allocation",
+        "logical constraints"
+      ],
+      "baseline": "Greedy feasible + verified bounds",
+      "upgrade": "MILP/CP-SAT",
+      "verification": "Integrality, constraints and solver status",
+      "libraries": [
+        "scipy.optimize",
+        "OR-Tools"
+      ],
+      "fallback": "Greedy repair",
+      "warning": "Time limits can return feasible non-optimal solutions",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "constraint-sat",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Combinatorial hard constraints",
+      "signals": [
+        "constraint satisfaction",
+        "rules",
+        "logic",
+        "scheduling"
+      ],
+      "baseline": "Backtracking on tiny case",
+      "upgrade": "CP-SAT model with reified conditions",
+      "verification": "Independent rule checker + infeasible cases",
+      "libraries": [
+        "OR-Tools"
+      ],
+      "fallback": "Backtracking bounded",
+      "warning": "CP-SAT integer scaling matters",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "local-search",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Improve an existing discrete solution",
+      "signals": [
+        "greedy",
+        "improve",
+        "swap",
+        "relocate",
+        "2-opt",
+        "neighborhood"
+      ],
+      "baseline": "Feasible greedy seed",
+      "upgrade": "Swap, 2-opt, relocate, multistart",
+      "verification": "Monotonic objective if improvement-only; feasibility every move",
+      "libraries": [
+        "Python stdlib",
+        "OR-Tools"
+      ],
+      "fallback": "Bounded loops",
+      "warning": "Local optimum not global optimum",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "metaheuristics",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Large nonconvex combinatorial search",
+      "signals": [
+        "tabu",
+        "annealing",
+        "genetic",
+        "iterated",
+        "LNS"
+      ],
+      "baseline": "Good baseline + repair",
+      "upgrade": "Tabu search, annealing, LNS",
+      "verification": "Seed sweeps, wall-time, feasibility, baseline",
+      "libraries": [
+        "Python stdlib",
+        "OR-Tools"
+      ],
+      "fallback": "Local search",
+      "warning": "Metaheuristic label does not prove better quality",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "qubos",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Quadratic binary encoding",
+      "signals": [
+        "qubo",
+        "binary quadratic",
+        "ising"
+      ],
+      "baseline": "First formulate constraints directly",
+      "upgrade": "QUBO with justified penalty weights",
+      "verification": "Recover constraints and compare to MILP baseline",
+      "libraries": [
+        "numpy"
+      ],
+      "fallback": "Direct MILP",
+      "warning": "QUBO or quantum framing provides no automatic advantage",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "continuous-opt",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "scientific_computing"
+      ],
+      "title": "Constrained smooth numerical optimization",
+      "signals": [
+        "continuous",
+        "minimize",
+        "gradient",
+        "bounds",
+        "parameters"
+      ],
+      "baseline": "Bounded local optimizer",
+      "upgrade": "Multistart, convexity check, KKT when applicable",
+      "verification": "Original constraints, gradients, termination code",
+      "libraries": [
+        "scipy.optimize"
+      ],
+      "fallback": "Grid search if tiny",
+      "warning": "Gradient method can converge to local stationary points",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "nonconvex-global",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "scientific_computing"
+      ],
+      "title": "Nonconvex or discontinuous objective",
+      "signals": [
+        "blackbox",
+        "multimodal",
+        "nonlinear",
+        "no gradient"
+      ],
+      "baseline": "Multi-start finite-budget local",
+      "upgrade": "Differential evolution or basin hopping",
+      "verification": "Seed stability, repeated trials and known synthetic optima",
+      "libraries": [
+        "scipy.optimize"
+      ],
+      "fallback": "Random search seeded",
+      "warning": "Black-box global solver usually lacks proof of global optimum",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "robust-optimization",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "scientific_computing"
+      ],
+      "title": "Optimization under uncertain inputs",
+      "signals": [
+        "uncertain",
+        "scenario",
+        "worst case",
+        "robust",
+        "random variable"
+      ],
+      "baseline": "Sensitivity sweep at a named nominal case",
+      "upgrade": "Minimax or scenario robust design",
+      "verification": "Feasible across specified scenario set",
+      "libraries": [
+        "numpy",
+        "scipy.optimize"
+      ],
+      "fallback": "Deterministic grid",
+      "warning": "Invented distributions are not learned from data",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "stochastic-optimization",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "statistics_ml"
+      ],
+      "title": "Stochastic decision problems",
+      "signals": [
+        "uncertainty",
+        "probability",
+        "expected cost",
+        "chance constraint"
+      ],
+      "baseline": "Monte Carlo baseline with controlled seed",
+      "upgrade": "Sample average approximation",
+      "verification": "Empirical violation rate and CI on holdout draws",
+      "libraries": [
+        "numpy",
+        "scipy.stats"
+      ],
+      "fallback": "Python random",
+      "warning": "Sample in optimizer differs from independent evaluation draws",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "multiobjective",
+      "family": "algorithms",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Multiple objectives and trade-offs",
+      "signals": [
+        "multiobjective",
+        "pareto",
+        "weights",
+        "fairness"
+      ],
+      "baseline": "Single weighted scalar objective with explicit units",
+      "upgrade": "Pareto scan or epsilon-constraint",
+      "verification": "Dominance and sensitivity to scaling",
+      "libraries": [
+        "numpy",
+        "scipy.optimize"
+      ],
+      "fallback": "Grid of weights",
+      "warning": "Weighted sums can miss nonconvex Pareto regions",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "fairness-metrics",
+      "family": "algorithms",
+      "task_types": [
+        "optimization",
+        "statistics_ml"
+      ],
+      "title": "Fairness and distribution of service",
+      "signals": [
+        "fairness",
+        "worst user",
+        "equity",
+        "coverage",
+        "service quality"
+      ],
+      "baseline": "Report max, quantiles and gaps",
+      "upgrade": "Minimax, lexicographic objectives",
+      "verification": "Distributional metric on original population",
+      "libraries": [
+        "Python statistics"
+      ],
+      "fallback": "Manual group metrics",
+      "warning": "Average improvement may worsen worst-off group",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "classification",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Supervised classification",
+      "signals": [
+        "classify",
+        "label",
+        "image classes",
+        "risk scoring"
+      ],
+      "baseline": "Majority-class baseline and stratified split",
+      "upgrade": "Logistic regression/trees and calibration",
+      "verification": "Leakage-free split and confusion matrix, PR",
+      "libraries": [
+        "scikit-learn"
+      ],
+      "fallback": "Rule baseline",
+      "warning": "Class imbalance makes accuracy misleading",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "regression",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Continuous target prediction",
+      "signals": [
+        "predict",
+        "regression",
+        "forecast quantity",
+        "continuous target"
+      ],
+      "baseline": "Median/mean baseline",
+      "upgrade": "Regularized regression, trees",
+      "verification": "MAE/RMSE on held-out data + residuals",
+      "libraries": [
+        "scikit-learn",
+        "statsmodels"
+      ],
+      "fallback": "Python statistics",
+      "warning": "Random train-test split invalid for time series",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "forecasting",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Time-series forecasting",
+      "signals": [
+        "time series",
+        "next value",
+        "trend",
+        "forecast"
+      ],
+      "baseline": "Naive and seasonal-naive baseline",
+      "upgrade": "ARIMA/ETS or ML with walk-forward",
+      "verification": "Walk-forward backtest, future-leak checks",
+      "libraries": [
+        "statsmodels",
+        "scikit-learn"
+      ],
+      "fallback": "Naive extrapolation",
+      "warning": "Do not random shuffle time series",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "hypothesis-test",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Statistical inference",
+      "signals": [
+        "p value",
+        "significance",
+        "experiment",
+        "difference",
+        "paired"
+      ],
+      "baseline": "Specify estimand and sampling unit",
+      "upgrade": "Welch, paired, bootstrap as appropriate",
+      "verification": "Sample unit, CI, effect size, multiple testing",
+      "libraries": [
+        "scipy.stats",
+        "statsmodels"
+      ],
+      "fallback": "Bootstrap stdlib",
+      "warning": "P-value alone is not practical effect size",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "causal-evaluation",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Treatment-effect reasoning",
+      "signals": [
+        "causal",
+        "intervention",
+        "before after",
+        "impact"
+      ],
+      "baseline": "Causal diagram and comparison assumptions",
+      "upgrade": "Difference-in-differences, matching if defensible",
+      "verification": "Pretrends, confounders, placebo/sensitivity",
+      "libraries": [
+        "statsmodels"
+      ],
+      "fallback": "Descriptive only",
+      "warning": "Observational correlation is not causal identification",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "anomaly-detection",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml",
+        "data_pipeline"
+      ],
+      "title": "Outlier or anomaly screening",
+      "signals": [
+        "anomaly",
+        "outlier",
+        "fraud",
+        "defect",
+        "unusual"
+      ],
+      "baseline": "Robust median/MAD with clear threshold",
+      "upgrade": "IsolationForest/temporal detectors",
+      "verification": "Precision review and false-positive analysis",
+      "libraries": [
+        "scikit-learn",
+        "scipy.stats"
+      ],
+      "fallback": "Python statistics",
+      "warning": "Without labels cannot claim anomaly detection accuracy",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "clustering",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Unsupervised group discovery",
+      "signals": [
+        "cluster",
+        "segment",
+        "similarity",
+        "groups"
+      ],
+      "baseline": "K-means/heuristic baseline with scaled features",
+      "upgrade": "DBSCAN/hierarchical when geometry requires",
+      "verification": "Stability, feature scaling, cluster utility",
+      "libraries": [
+        "scikit-learn"
+      ],
+      "fallback": "Hand-built summaries",
+      "warning": "Cluster labels have no inherent semantic truth",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "simulation-montecarlo",
+      "family": "statistics",
+      "task_types": [
+        "scientific_computing",
+        "statistics_ml"
+      ],
+      "title": "Monte Carlo uncertainty propagation",
+      "signals": [
+        "simulation",
+        "random",
+        "distribution",
+        "uncertainty",
+        "sampling"
+      ],
+      "baseline": "Seeded Monte Carlo using documented distributions",
+      "upgrade": "Variance reduction, stratified sampling",
+      "verification": "Convergence, CI, sensitivity to assumptions",
+      "libraries": [
+        "numpy",
+        "scipy.stats"
+      ],
+      "fallback": "Python random",
+      "warning": "Synthetic priors must be labeled assumptions",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "bootstrap-ci",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Bootstrap uncertainty interval",
+      "signals": [
+        "bootstrap",
+        "confidence interval",
+        "distribution",
+        "resample"
+      ],
+      "baseline": "IID bootstrap with unit check",
+      "upgrade": "Block/cluster bootstrap for dependent data",
+      "verification": "Coverage on synthetic known cases",
+      "libraries": [
+        "numpy",
+        "scipy.stats"
+      ],
+      "fallback": "Python random",
+      "warning": "Resample independent units, not arbitrary correlated rows",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "experiment-design",
+      "family": "statistics",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Experiment design and power",
+      "signals": [
+        "ab test",
+        "power",
+        "randomization",
+        "sample size"
+      ],
+      "baseline": "Randomization plan and target effect",
+      "upgrade": "Power simulation with plausible scenarios",
+      "verification": "Exposure unit, peeking and multiple comparisons",
+      "libraries": [
+        "statsmodels",
+        "scipy.stats"
+      ],
+      "fallback": "Monte Carlo stdlib",
+      "warning": "Post-hoc power not a substitute for design",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "image-annotation",
+      "family": "vision",
+      "task_types": [
+        "computer_vision",
+        "reporting"
+      ],
+      "title": "Annotate existing images",
+      "signals": [
+        "bounding box",
+        "annotate",
+        "image label",
+        "coords"
+      ],
+      "baseline": "Pillow shapes and labels on original",
+      "upgrade": "SVG overlay maintaining coordinate transform",
+      "verification": "Bounding boxes inside image, original preserved",
+      "libraries": [
+        "Pillow",
+        "SVG"
+      ],
+      "fallback": "SVG directly",
+      "warning": "Annotated image is not an independent detection result",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "image-registration",
+      "family": "vision",
+      "task_types": [
+        "computer_vision"
+      ],
+      "title": "Image alignment before comparison",
+      "signals": [
+        "registration",
+        "align",
+        "rotate",
+        "perspective",
+        "before after"
+      ],
+      "baseline": "Translation/feature-based registration",
+      "upgrade": "Homography when justified",
+      "verification": "Known transform synthetic test and residual",
+      "libraries": [
+        "OpenCV",
+        "scikit-image"
+      ],
+      "fallback": "Manual correspondence",
+      "warning": "Do not call misalignment a defect",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "image-segmentation",
+      "family": "vision",
+      "task_types": [
+        "computer_vision"
+      ],
+      "title": "Region segmentation",
+      "signals": [
+        "threshold",
+        "mask",
+        "segment",
+        "object"
+      ],
+      "baseline": "Threshold + morphology baseline",
+      "upgrade": "Connected components, adaptive methods",
+      "verification": "IoU on labeled synthetic masks",
+      "libraries": [
+        "OpenCV",
+        "scikit-image"
+      ],
+      "fallback": "Pillow + numpy",
+      "warning": "Threshold tuned on test image overfits",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "image-measure",
+      "family": "vision",
+      "task_types": [
+        "computer_vision",
+        "scientific_computing"
+      ],
+      "title": "Pixel geometry to physical measure",
+      "signals": [
+        "area",
+        "pixel",
+        "scale",
+        "length",
+        "metrology"
+      ],
+      "baseline": "Measure pixels with explicit calibration",
+      "upgrade": "Perspective correction, uncertainty budget",
+      "verification": "Known-size object and unit test",
+      "libraries": [
+        "OpenCV",
+        "numpy"
+      ],
+      "fallback": "Pure pixel counts",
+      "warning": "Pixel counts not physical length without calibration",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "image-compare",
+      "family": "vision",
+      "task_types": [
+        "computer_vision"
+      ],
+      "title": "Compare reference and observed image",
+      "signals": [
+        "visual diff",
+        "defect",
+        "image compare"
+      ],
+      "baseline": "Normalize exposure and register then diff",
+      "upgrade": "Structural metrics and region analysis",
+      "verification": "No-change/shift-only/real-change negative controls",
+      "libraries": [
+        "OpenCV",
+        "scikit-image"
+      ],
+      "fallback": "Pillow diff",
+      "warning": "Color/exposure changes can masquerade as damage",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "ocr-read",
+      "family": "vision",
+      "task_types": [
+        "computer_vision",
+        "documents_search"
+      ],
+      "title": "Extract text from images",
+      "signals": [
+        "ocr",
+        "scan",
+        "receipt",
+        "text in picture"
+      ],
+      "baseline": "Use provided selectable text if present",
+      "upgrade": "Local OCR binary if preinstalled & permitted",
+      "verification": "Spot-check OCR outputs and numeric tokens",
+      "libraries": [
+        "Tesseract",
+        "pytesseract"
+      ],
+      "fallback": "Manual transcription small",
+      "warning": "OCR is not a reliable numeric oracle",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "synthetic-graphic",
+      "family": "vision",
+      "task_types": [
+        "computer_vision",
+        "reporting"
+      ],
+      "title": "Create code-rendered diagram",
+      "signals": [
+        "illustration",
+        "diagram",
+        "icon",
+        "schematic",
+        "image generate"
+      ],
+      "baseline": "SVG/Pillow deterministic geometry",
+      "upgrade": "Matplotlib charts with annotations",
+      "verification": "Render and inspect visual output",
+      "libraries": [
+        "SVG",
+        "Pillow",
+        "Matplotlib"
+      ],
+      "fallback": "Static SVG strings",
+      "warning": "Do not fabricate photographic evidence",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "physics-symbolic",
+      "family": "science",
+      "task_types": [
+        "scientific_computing"
+      ],
+      "title": "Symbolic equations and derivations",
+      "signals": [
+        "symbolic",
+        "derive",
+        "integral",
+        "differentiate",
+        "equation"
+      ],
+      "baseline": "SymPy symbolic derivation and substitution",
+      "upgrade": "Lambdify to numeric routine",
+      "verification": "Residual, limits, units, independent example",
+      "libraries": [
+        "SymPy"
+      ],
+      "fallback": "Manual algebra tiny",
+      "warning": "Symbolic simplification may require assumptions",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "physics-units",
+      "family": "science",
+      "task_types": [
+        "scientific_computing"
+      ],
+      "title": "Dimensional analysis",
+      "signals": [
+        "physical units",
+        "conversion",
+        "dimensional",
+        "SI"
+      ],
+      "baseline": "Variable-unit table and scalar tests",
+      "upgrade": "Pint end-to-end quantity types",
+      "verification": "Reject dimensional mismatch and conversion tests",
+      "libraries": [
+        "Pint"
+      ],
+      "fallback": "Hand-checked unit tests",
+      "warning": "Numerically plausible answers can have wrong units",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "physics-ode",
+      "family": "science",
+      "task_types": [
+        "scientific_computing"
+      ],
+      "title": "Time evolution differential equations",
+      "signals": [
+        "ode",
+        "differential equation",
+        "initial condition",
+        "time response"
+      ],
+      "baseline": "Known analytical simple case",
+      "upgrade": "solve_ivp with event handling",
+      "verification": "Initial condition, residual, step convergence",
+      "libraries": [
+        "scipy.integrate"
+      ],
+      "fallback": "Euler/RK4 demonstration",
+      "warning": "Numerical success status alone not physical correctness",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "physics-pde",
+      "family": "science",
+      "task_types": [
+        "scientific_computing"
+      ],
+      "title": "Spatial fields and PDE models",
+      "signals": [
+        "pde",
+        "field",
+        "boundary condition",
+        "mesh",
+        "heat"
+      ],
+      "baseline": "Conservation and simple manufactured solution",
+      "upgrade": "FDM/FEM if correct mesh/BC available",
+      "verification": "Mesh refinement, boundary, conservation",
+      "libraries": [
+        "numpy",
+        "scipy"
+      ],
+      "fallback": "Finite difference tiny",
+      "warning": "Do not claim FEM reliability without mesh test",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "signal-processing",
+      "family": "science",
+      "task_types": [
+        "scientific_computing",
+        "data_pipeline"
+      ],
+      "title": "Time-frequency signal processing",
+      "signals": [
+        "fft",
+        "filter",
+        "spectrogram",
+        "sampling",
+        "phase"
+      ],
+      "baseline": "Synthetic tones with known frequencies",
+      "upgrade": "SciPy signal filters/STFT",
+      "verification": "Nyquist, scaling, leakage and phase tests",
+      "libraries": [
+        "scipy.signal",
+        "numpy"
+      ],
+      "fallback": "Python math small",
+      "warning": "FFT bins and Hz units must match sample rate",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "report-provenance",
+      "family": "report",
+      "task_types": [
+        "reporting",
+        "documents_search"
+      ],
+      "title": "Evidence-backed report",
+      "signals": [
+        "report",
+        "summary",
+        "findings",
+        "citations",
+        "sources"
+      ],
+      "baseline": "Cited claims and uncertainty register",
+      "upgrade": "Reproducible generated HTML/PDF",
+      "verification": "Trace every figure and number to source",
+      "libraries": [
+        "Markdown",
+        "Python stdlib"
+      ],
+      "fallback": "Plain Markdown",
+      "warning": "Model-written claims without evidence are not facts",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "pdf-extraction",
+      "family": "report",
+      "task_types": [
+        "documents_search",
+        "reporting"
+      ],
+      "title": "PDF document extraction",
+      "signals": [
+        "pdf",
+        "text extraction",
+        "pages",
+        "documents"
+      ],
+      "baseline": "Use text layer extractor when available",
+      "upgrade": "Page-aware table/layout extraction",
+      "verification": "Sample page spot-check and table numeric checks",
+      "libraries": [
+        "pymupdf",
+        "pdfplumber"
+      ],
+      "fallback": "Manual page notes",
+      "warning": "Page order and tables may be scrambled",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "report-export",
+      "family": "report",
+      "task_types": [
+        "reporting"
+      ],
+      "title": "Export files with correct typography",
+      "signals": [
+        "pdf report",
+        "slides",
+        "html",
+        "download"
+      ],
+      "baseline": "UTF-8 HTML and browser print",
+      "upgrade": "PDF/docx specialized pipelines when installed",
+      "verification": "Open generated file, inspect figures/fonts",
+      "libraries": [
+        "reportlab",
+        "WeasyPrint"
+      ],
+      "fallback": "HTML",
+      "warning": "Do not claim PDF quality without visual inspection",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "ui-test-matrix",
+      "family": "quality",
+      "task_types": [
+        "quality_security",
+        "web_app"
+      ],
+      "title": "End-to-end use case coverage",
+      "signals": [
+        "integration test",
+        "acceptance",
+        "workflow",
+        "user journey"
+      ],
+      "baseline": "Happy path + empty invalid boundary cases",
+      "upgrade": "E2E automation if permitted",
+      "verification": "Manual browser and API result agree",
+      "libraries": [
+        "unittest",
+        "pytest"
+      ],
+      "fallback": "unittest stdlib",
+      "warning": "Code unit tests do not prove UI interaction",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "independent-validator",
+      "family": "quality",
+      "task_types": [
+        "quality_security",
+        "optimization",
+        "data_pipeline"
+      ],
+      "title": "Independent solution verifier",
+      "signals": [
+        "validate",
+        "constraints",
+        "solution",
+        "feasible",
+        "check"
+      ],
+      "baseline": "Recompute invariants from raw input/output",
+      "upgrade": "Property tests and tiny exact oracle",
+      "verification": "Fault injection; catches deliberate invalid outputs",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Manual cross check",
+      "warning": "Three AI approvals are not three independent checks",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "benchmark-design",
+      "family": "quality",
+      "task_types": [
+        "quality_security",
+        "optimization",
+        "statistics_ml"
+      ],
+      "title": "Fair baseline comparison",
+      "signals": [
+        "benchmark",
+        "compare",
+        "runtime",
+        "improvement",
+        "speed"
+      ],
+      "baseline": "Same data/seed/objective/budget",
+      "upgrade": "Repeated seeds, confidence intervals",
+      "verification": "Wall-clock, objective, violations, timeout flags",
+      "libraries": [
+        "timeit",
+        "statistics"
+      ],
+      "fallback": "Manual time log",
+      "warning": "Comparing different metrics is invalid",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "security-secret-scan",
+      "family": "quality",
+      "task_types": [
+        "quality_security"
+      ],
+      "title": "Secret/data leak hygiene",
+      "signals": [
+        "private repo",
+        "secret",
+        "credential",
+        "token",
+        "publish"
+      ],
+      "baseline": "Diff and allowlist review",
+      "upgrade": "Secret scanning tool if available",
+      "verification": "No keys, private data or task content in public paths",
+      "libraries": [
+        "git",
+        "re"
+      ],
+      "fallback": "Manual diff review",
+      "warning": "Scanner cannot guarantee no leaks",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "runtime-diagnose",
+      "family": "quality",
+      "task_types": [
+        "quality_security",
+        "integration"
+      ],
+      "title": "Environment and dependency checks",
+      "signals": [
+        "package",
+        "dependency",
+        "python version",
+        "node version",
+        "docker"
+      ],
+      "baseline": "Probe commands read-only",
+      "upgrade": "Minimal local install permitted by rules",
+      "verification": "Exact versions + import/run smoke",
+      "libraries": [
+        "Python stdlib",
+        "Node.js"
+      ],
+      "fallback": "Pure stdlib",
+      "warning": "Do not assume install/runtime rights",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "resilience-checkpoint",
+      "family": "quality",
+      "task_types": [
+        "quality_security",
+        "web_app"
+      ],
+      "title": "Crash recovery and idempotence",
+      "signals": [
+        "disconnect",
+        "server crash",
+        "retry",
+        "reconnect"
+      ],
+      "baseline": "Atomic state snapshot and rerun-safe commands",
+      "upgrade": "Job IDs and persisted state if needed",
+      "verification": "Repeat action does not double-write",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Markdown TASK_STATE",
+      "warning": "A mere narrative status is not persistence",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "container-choice",
+      "family": "quality",
+      "task_types": [
+        "integration",
+        "web_app"
+      ],
+      "title": "Choose Docker vs direct runtime",
+      "signals": [
+        "docker",
+        "compose",
+        "container",
+        "deploy"
+      ],
+      "baseline": "Direct run of one process/service",
+      "upgrade": "Docker only if available and adds value",
+      "verification": "Same endpoints both modes if tested",
+      "libraries": [
+        "Docker"
+      ],
+      "fallback": "Python/Node CLI",
+      "warning": "Docker daemon may be missing or prohibited",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "mcp-choice",
+      "family": "quality",
+      "task_types": [
+        "integration"
+      ],
+      "title": "Choose MCP vs CLI utility",
+      "signals": [
+        "mcp",
+        "tools",
+        "codex integration",
+        "server"
+      ],
+      "baseline": "Simple CLI first",
+      "upgrade": "Local stdio MCP for repeatable typed calls",
+      "verification": "Same fixtures and result both interfaces",
+      "libraries": [
+        "MCP SDK"
+      ],
+      "fallback": "Python script",
+      "warning": "Tool wrappers do not increase algorithm accuracy",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "algorithm-selection",
+      "family": "quality",
+      "task_types": [
+        "optimization",
+        "statistics_ml",
+        "scientific_computing",
+        "computer_vision"
+      ],
+      "title": "Choose method based on problem properties",
+      "signals": [
+        "which algorithm",
+        "method choice",
+        "solver",
+        "approach"
+      ],
+      "baseline": "Model variables/input/output and baseline",
+      "upgrade": "Choose exact/search/statistical or numerical method",
+      "verification": "Selection rationale and contra-indications",
+      "libraries": [
+        "Python stdlib"
+      ],
+      "fallback": "Human decision table",
+      "warning": "Keyword-only selection can be confidently wrong",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    },
+    {
+      "id": "simulation-qa",
+      "family": "quality",
+      "task_types": [
+        "scientific_computing",
+        "statistics_ml"
+      ],
+      "title": "Scientific reproducibility review",
+      "signals": [
+        "simulate",
+        "physical model",
+        "numerical",
+        "uncertainty"
+      ],
+      "baseline": "Seed, assumptions and independent analytic case",
+      "upgrade": "Convergence/sensitivity studies",
+      "verification": "Limit cases and conservation residual",
+      "libraries": [
+        "numpy",
+        "scipy"
+      ],
+      "fallback": "Python stdlib",
+      "warning": "Reproducibility does not prove truth",
+      "implementation_status": "RECIPE_ONLY",
+      "verified_commands": []
+    }
+  ]
+}

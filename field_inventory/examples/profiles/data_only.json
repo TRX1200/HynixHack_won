@@ -1,0 +1,27 @@
+{
+  "_synthetic": true,
+  "id": "synth-data",
+  "summary": "Join three synthetic CSV tables and create an auditable dashboard for weekly metrics",
+  "task_types": [
+    "data_pipeline",
+    "reporting"
+  ],
+  "signals": [
+    "join",
+    "duplicate",
+    "missing",
+    "aggregate",
+    "chart",
+    "csv"
+  ],
+  "hard_constraints": [
+    "source IDs remain unique"
+  ],
+  "deliverables": [
+    "CSV",
+    "HTML report"
+  ],
+  "environment": {
+    "network_allowed": false
+  }
+}

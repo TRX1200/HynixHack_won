@@ -1,0 +1,5 @@
+{
+  "calculator": "rc",
+  "resistance_ohm": 1000,
+  "capacitance_f": 1e-6
+}

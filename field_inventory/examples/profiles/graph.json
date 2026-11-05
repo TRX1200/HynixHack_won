@@ -1,0 +1,26 @@
+{
+  "_synthetic": true,
+  "id": "synth-graph",
+  "summary": "Find the cheapest valid path through a weighted directed graph with positive costs",
+  "task_types": [
+    "optimization"
+  ],
+  "signals": [
+    "shortest path",
+    "dijkstra",
+    "weighted graph",
+    "directed"
+  ],
+  "objective": {
+    "sense": "min",
+    "metric": "path cost",
+    "units": "synthetic units"
+  },
+  "hard_constraints": [
+    "travel only on existing edges"
+  ],
+  "properties": {
+    "problem_structure": "shortest_path",
+    "edge_weight_type": "nonnegative"
+  }
+}

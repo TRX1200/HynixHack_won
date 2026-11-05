@@ -1,0 +1,6 @@
+{
+  "calculator": "parallel_plate",
+  "relative_permittivity": 1,
+  "area_m2": 1,
+  "thickness_m": 0.001
+}

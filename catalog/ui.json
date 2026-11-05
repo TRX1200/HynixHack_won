@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-31",
+  "scope": "Official-source UI candidate and license reference only; no vendor code, starter, packages, or completed task solution bundled.",
+  "vendored": false,
+  "installation_tested": false,
+  "host_compatibility_verified": false,
+  "selection_policy": [
+    "Read the task README, existing source, package.json, lockfile and actual runtimes first.",
+    "Fix existing bugs and one required end-to-end flow before restyling.",
+    "Keep the existing framework and package manager; add at most one demonstrated UI dependency at a time.",
+    "Use approved local packages/assets, preserve licenses and lockfiles, and avoid runtime CDN/fonts/analytics.",
+    "Public-code inbound permission does not permit uploading task data, source, logs or artifacts to remote tools.",
+    "No personal API key, external generation service or deployment is required."
+  ],
+  "license_note": "Licenses below describe the linked OSS projects as reviewed, not every paid product, template, registry item, dependency or future release. Check the selected version and retain applicable notices.",
+  "candidates": [
+    {
+      "name": "shadcn/ui",
+      "role": "Customizable UI components and component-code distribution",
+      "choose_when": "Existing React or supported framework setup can adopt a small set of required components.",
+      "avoid_when": "Adoption would regenerate or migrate a working application merely for its appearance.",
+      "docs_url": "https://ui.shadcn.com/docs",
+      "setup_url": "https://ui.shadcn.com/docs/installation",
+      "repository_url": "https://github.com/shadcn-ui/ui",
+      "license_spdx": "MIT",
+      "license_url": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md",
+      "notes": ["Inspect generated source and dependencies; do not replace the whole app.", "A third-party registry item has its own license and trust boundary."]
+    },
+    {
+      "name": "Radix Primitives",
+      "role": "Low-level accessible interaction primitives such as dialogs, menus and tabs",
+      "choose_when": "The existing compatible UI needs focus/keyboard behavior with custom styling.",
+      "avoid_when": "A fully styled theme or non-React framework replacement is expected.",
+      "docs_url": "https://www.radix-ui.com/primitives/docs/overview/introduction",
+      "repository_url": "https://github.com/radix-ui/primitives",
+      "license_spdx": "MIT",
+      "license_url": "https://github.com/radix-ui/primitives/blob/main/LICENSE",
+      "notes": ["Primitives are unstyled; verify accessibility after composition and customization."]
+    },
+    {
+      "name": "daisyUI",
+      "role": "Tailwind CSS component classes and themes",
+      "choose_when": "Existing HTML, Vue, Svelte or server-rendered templates can reuse a compatible local CSS build.",
+      "avoid_when": "The environment lacks a permitted compatible build path and existing CSS is sufficient.",
+      "docs_url": "https://daisyui.com/docs/use/",
+      "setup_url": "https://daisyui.com/docs/install/",
+      "repository_url": "https://github.com/saadeghi/daisyui",
+      "license_spdx": "MIT",
+      "license_url": "https://github.com/saadeghi/daisyui/blob/master/LICENSE",
+      "notes": ["React is not required for CSS classes.", "The documented npm plugin path requires Node and Tailwind; confirm actual versions.", "Do not depend on remote runtime CDN CSS or paid templates."]
+    },
+    {
+      "name": "Lucide",
+      "role": "SVG icons with packages for multiple frameworks",
+      "choose_when": "A few consistent icons clarify existing buttons and navigation.",
+      "avoid_when": "Icons would replace necessary text labels or add an unnecessary framework.",
+      "docs_url": "https://lucide.dev/guide/",
+      "repository_url": "https://github.com/lucide-icons/lucide",
+      "license_spdx": "ISC",
+      "license_url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+      "additional_notices": ["The upstream LICENSE also includes MIT terms and attribution for listed Feather-derived icons; preserve applicable full notices."],
+      "notes": ["Use the package matching the existing stack or approved local SVG assets.", "Provide accessible labels for icon-only actions."]
+    },
+    {
+      "name": "Recharts",
+      "role": "React chart components",
+      "choose_when": "An already-React application needs a justified line, bar or other data chart.",
+      "avoid_when": "Adding React or a migration would be required just to draw one chart.",
+      "docs_url": "https://recharts.github.io/en-US/guide/",
+      "repository_url": "https://github.com/recharts/recharts",
+      "license_spdx": "MIT",
+      "license_url": "https://github.com/recharts/recharts/blob/main/LICENSE",
+      "notes": ["Check actual React and peer-dependency compatibility, chart container dimensions, units and source numbers."]
+    },
+    {
+      "name": "Tailwind CSS",
+      "role": "Utility CSS styling and responsive layout",
+      "choose_when": "Already installed or a compatible local CSS pipeline is justified.",
+      "avoid_when": "Existing CSS is sufficient or adoption would force a major-version migration.",
+      "docs_url": "https://tailwindcss.com/docs/installation",
+      "repository_url": "https://github.com/tailwindlabs/tailwindcss",
+      "license_spdx": "MIT",
+      "license_url": "https://github.com/tailwindlabs/tailwindcss/blob/main/LICENSE",
+      "notes": ["Not a prebuilt application or complete component library.", "The OSS core license does not automatically cover separate commercial Plus/Pro products."]
+    }
+  ]
+}

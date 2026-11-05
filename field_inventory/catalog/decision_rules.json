@@ -1,0 +1,394 @@
+{
+  "version": "2.0.0",
+  "note": "Exact property gates. Unknown properties cause no rule application.",
+  "rules": [
+    {
+      "id": "graph-unweighted",
+      "when": {
+        "problem_structure": "shortest_path",
+        "edge_weight_type": "unweighted"
+      },
+      "recommend": [
+        "unweighted-shortest"
+      ],
+      "avoid": [
+        "weighted-shortest",
+        "negative-shortest"
+      ],
+      "explanation": "Use BFS for equal edge cost, test reachability"
+    },
+    {
+      "id": "graph-nonnegative",
+      "when": {
+        "problem_structure": "shortest_path",
+        "edge_weight_type": "nonnegative"
+      },
+      "recommend": [
+        "weighted-shortest"
+      ],
+      "avoid": [
+        "unweighted-shortest",
+        "negative-shortest"
+      ],
+      "explanation": "Dijkstra requires nonnegative edge weights"
+    },
+    {
+      "id": "graph-negative",
+      "when": {
+        "problem_structure": "shortest_path",
+        "edge_weight_type": "may_be_negative"
+      },
+      "recommend": [
+        "negative-shortest"
+      ],
+      "avoid": [
+        "unweighted-shortest",
+        "weighted-shortest"
+      ],
+      "explanation": "Bellman-Ford and negative-cycle detection"
+    },
+    {
+      "id": "assignment-one-to-one",
+      "when": {
+        "problem_structure": "assignment",
+        "capacity_model": "one_to_one"
+      },
+      "recommend": [
+        "bipartite-match"
+      ],
+      "avoid": [
+        "min-cost-flow"
+      ],
+      "explanation": "Verify every item matched at most once"
+    },
+    {
+      "id": "assignment-many-to-one",
+      "when": {
+        "problem_structure": "assignment",
+        "capacity_model": "many_to_one"
+      },
+      "recommend": [
+        "min-cost-flow"
+      ],
+      "avoid": [
+        "bipartite-match"
+      ],
+      "explanation": "Use capacity-preserving flow/MILP; one-to-one matching may be invalid"
+    },
+    {
+      "id": "assignment-facilities",
+      "when": {
+        "problem_structure": "facility_location"
+      },
+      "recommend": [
+        "facility-location"
+      ],
+      "avoid": [],
+      "explanation": "Facility opening and assignment are linked decisions"
+    },
+    {
+      "id": "routing-single",
+      "when": {
+        "problem_structure": "routing",
+        "vehicle_count": "one"
+      },
+      "recommend": [
+        "traveling-salesman",
+        "local-search"
+      ],
+      "avoid": [
+        "vehicle-routing"
+      ],
+      "explanation": "Single route TSP-like unless timing/other constraints change the structure"
+    },
+    {
+      "id": "routing-multi",
+      "when": {
+        "problem_structure": "routing",
+        "vehicle_count": "multiple"
+      },
+      "recommend": [
+        "vehicle-routing",
+        "local-search"
+      ],
+      "avoid": [
+        "traveling-salesman"
+      ],
+      "explanation": "Multi-vehicle routing is not single TSP"
+    },
+    {
+      "id": "routing-directed",
+      "when": {
+        "problem_structure": "routing",
+        "travel_cost_directional": true
+      },
+      "recommend": [
+        "local-search"
+      ],
+      "avoid": [],
+      "explanation": "Directionality changes cost validation, not vehicle count. Recompute directed arcs; choose TSP/VRP only from the explicit vehicle-count rule."
+    },
+    {
+      "id": "schedule-cumulative",
+      "when": {
+        "problem_structure": "scheduling",
+        "has_resource_constraints": true
+      },
+      "recommend": [
+        "resource-schedule",
+        "constraint-sat"
+      ],
+      "avoid": [
+        "interval-schedule"
+      ],
+      "explanation": "Resource capacity invalidates simple interval-scheduling greedies"
+    },
+    {
+      "id": "schedule-simple",
+      "when": {
+        "problem_structure": "scheduling",
+        "has_resource_constraints": false,
+        "interval_model_confirmed": true
+      },
+      "recommend": [
+        "interval-schedule",
+        "precedence-dag"
+      ],
+      "avoid": [],
+      "explanation": "Use a fixed-interval model only after confirming its objective/precedence assumptions; no resource constraint alone is insufficient."
+    },
+    {
+      "id": "resource-fractional",
+      "when": {
+        "problem_structure": "resource_allocation",
+        "decision_variable_type": "continuous",
+        "linear_model_confirmed": true
+      },
+      "recommend": [
+        "linear-programming"
+      ],
+      "avoid": [
+        "mixed-integer"
+      ],
+      "explanation": "Continuous variables justify LP only after every objective and constraint is confirmed linear."
+    },
+    {
+      "id": "resource-discrete",
+      "when": {
+        "problem_structure": "resource_allocation",
+        "decision_variable_type": "integer"
+      },
+      "recommend": [
+        "mixed-integer",
+        "constraint-sat"
+      ],
+      "avoid": [
+        "linear-programming"
+      ],
+      "explanation": "LP relaxation may bound but does not satisfy integrality"
+    },
+    {
+      "id": "budget-selection",
+      "when": {
+        "problem_structure": "knapsack"
+      },
+      "recommend": [
+        "knapsack"
+      ],
+      "avoid": [],
+      "explanation": "0/1 vs fractional knapsack differs"
+    },
+    {
+      "id": "opt-uncertain",
+      "when": {
+        "uncertainty_model": "scenarios"
+      },
+      "recommend": [
+        "robust-optimization",
+        "multiobjective"
+      ],
+      "avoid": [],
+      "explanation": "Scenario assumptions and set must be explicit"
+    },
+    {
+      "id": "opt-probabilistic",
+      "when": {
+        "uncertainty_model": "probability"
+      },
+      "recommend": [
+        "stochastic-optimization"
+      ],
+      "avoid": [],
+      "explanation": "Estimate probability model and test out-of-sample draws"
+    },
+    {
+      "id": "ml-temporal",
+      "when": {
+        "task_subtype": "time_series_forecast"
+      },
+      "recommend": [
+        "forecasting"
+      ],
+      "avoid": [
+        "classification"
+      ],
+      "explanation": "Walk-forward split required; avoid random shuffle leakage"
+    },
+    {
+      "id": "ml-classify",
+      "when": {
+        "task_subtype": "classification"
+      },
+      "recommend": [
+        "classification"
+      ],
+      "avoid": [
+        "regression"
+      ],
+      "explanation": "Use held-out classification metrics and calibration"
+    },
+    {
+      "id": "ml-regress",
+      "when": {
+        "task_subtype": "regression"
+      },
+      "recommend": [
+        "regression"
+      ],
+      "avoid": [
+        "classification"
+      ],
+      "explanation": "Continuous numeric target requires regression loss"
+    },
+    {
+      "id": "ml-hypothesis",
+      "when": {
+        "task_subtype": "hypothesis_test"
+      },
+      "recommend": [
+        "hypothesis-test"
+      ],
+      "avoid": [
+        "classification"
+      ],
+      "explanation": "Define sampling units and estimand before picking test"
+    },
+    {
+      "id": "vision-alignment",
+      "when": {
+        "task_subtype": "image_comparison"
+      },
+      "recommend": [
+        "image-registration",
+        "image-compare"
+      ],
+      "avoid": [
+        "image-segmentation"
+      ],
+      "explanation": "Align first; do not label registration shift as defect"
+    },
+    {
+      "id": "vision-segmentation",
+      "when": {
+        "task_subtype": "segmentation"
+      },
+      "recommend": [
+        "image-segmentation",
+        "image-annotation"
+      ],
+      "avoid": [],
+      "explanation": "Need labeled masks and negative controls"
+    },
+    {
+      "id": "physics-ode",
+      "when": {
+        "task_subtype": "ode"
+      },
+      "recommend": [
+        "physics-ode",
+        "physics-units"
+      ],
+      "avoid": [
+        "physics-pde"
+      ],
+      "explanation": "Initial conditions and residual required"
+    },
+    {
+      "id": "physics-pde",
+      "when": {
+        "task_subtype": "pde"
+      },
+      "recommend": [
+        "physics-pde",
+        "physics-units"
+      ],
+      "avoid": [
+        "physics-ode"
+      ],
+      "explanation": "Boundary conditions and mesh convergence required"
+    },
+    {
+      "id": "document-retrieve",
+      "when": {
+        "task_subtype": "policy_retrieval"
+      },
+      "recommend": [
+        "text-index",
+        "report-provenance"
+      ],
+      "avoid": [],
+      "explanation": "Citation must trace to correct version/date"
+    },
+    {
+      "id": "app-auth",
+      "when": {
+        "requires_role_authorization": true
+      },
+      "recommend": [
+        "role-access",
+        "input-validation"
+      ],
+      "avoid": [],
+      "explanation": "Enforce authorization server-side, not only screen hiding"
+    },
+    {
+      "id": "app-calc",
+      "when": {
+        "requires_api_calculation": true
+      },
+      "recommend": [
+        "input-validation"
+      ],
+      "avoid": [
+        "frontend-static"
+      ],
+      "explanation": "Require a real API calculation; choose its backend from the existing verified stack/runtime, never force Python over Node."
+    },
+    {
+      "id": "runtime-no-docker",
+      "when": {
+        "docker_available": false
+      },
+      "recommend": [
+        "runtime-diagnose"
+      ],
+      "avoid": [
+        "container-choice"
+      ],
+      "explanation": "Use direct runtime; do not force docker in restricted environment"
+    },
+    {
+      "id": "offline-no-external",
+      "when": {
+        "network_allowed": false
+      },
+      "recommend": [
+        "runtime-diagnose"
+      ],
+      "avoid": [
+        "semantic-retrieval"
+      ],
+      "explanation": "No remote API/CDN assumption"
+    }
+  ]
+}

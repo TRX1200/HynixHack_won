@@ -1,0 +1,206 @@
+{
+  "version": "2.0.0",
+  "note": "Code shape reference; commands illustrative only, not directly runnable in inventory seed.",
+  "patterns": [
+    {
+      "id": "single-py-cli",
+      "task_types": [
+        "data_pipeline",
+        "scientific_computing",
+        "statistics_ml"
+      ],
+      "title": "One Python stdlib command with testable pure functions",
+      "when": "Small offline processing or numerical baseline; output files or JSON",
+      "gates": "No API/web server required",
+      "command_illustrative": "python script.py input.csv --output result.json",
+      "checks": "unittest, rerun determinism, invalid schema",
+      "implemented": false
+    },
+    {
+      "id": "sqlite-analysis",
+      "task_types": [
+        "data_pipeline",
+        "documents_search"
+      ],
+      "title": "SQLite normalized tables or FTS5",
+      "when": "Joins, provenance and local keyword search",
+      "gates": "Dataset fits in single file and local filesystem available",
+      "command_illustrative": "python -m sqlite3 db.sqlite",
+      "checks": "Key/cardinality, exact document span",
+      "implemented": false
+    },
+    {
+      "id": "pandas-duckdb",
+      "task_types": [
+        "data_pipeline",
+        "reporting"
+      ],
+      "title": "Tabular analytics using pandas or DuckDB",
+      "when": "Large joins/aggregations and exploratory metrics",
+      "gates": "Libraries installed and join grain verified",
+      "command_illustrative": "python analyze.py",
+      "checks": "Row conservation, no join multiplication",
+      "implemented": false
+    },
+    {
+      "id": "node-vanilla",
+      "task_types": [
+        "web_app"
+      ],
+      "title": "Vanilla HTML/JS + Node.js HTTP",
+      "when": "Small frontend plus simple local API",
+      "gates": "Task does not need specialized Python numerics",
+      "command_illustrative": "node server.mjs",
+      "checks": "HTTP contract plus manual UI",
+      "implemented": false
+    },
+    {
+      "id": "python-js-vertical",
+      "task_types": [
+        "web_app",
+        "optimization",
+        "statistics_ml",
+        "scientific_computing"
+      ],
+      "title": "Python calculation/API + JS browser UI",
+      "when": "UI needs repeated numerical or backend calculations",
+      "gates": "Both runtimes available; API schema agreed",
+      "command_illustrative": "python app.py && browser preview",
+      "checks": "Input→HTTP→computed output + boundary errors",
+      "implemented": false
+    },
+    {
+      "id": "existing-react",
+      "task_types": [
+        "web_app"
+      ],
+      "title": "Existing React/TS app, preserve installed stack",
+      "when": "Existing project uses React or frontend complexity justifies",
+      "gates": "No unnecessary dependencies/new scaffold",
+      "command_illustrative": "npm run test && npm run dev",
+      "checks": "UI flow, type + runtime contract",
+      "implemented": false
+    },
+    {
+      "id": "graph-stdlib",
+      "task_types": [
+        "optimization",
+        "geospatial"
+      ],
+      "title": "Graph algorithms using Python stdlib",
+      "when": "BFS/Dijkstra, adjacency and simple routing",
+      "gates": "Problem actually is graph model; weights verified",
+      "command_illustrative": "python graph_solver.py",
+      "checks": "Reachability, independent cost recomputation",
+      "implemented": false
+    },
+    {
+      "id": "opt-greedy-check",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "Feasible heuristic + independent verifier",
+      "when": "Large discrete problem/time bound",
+      "gates": "Hard constraints can be checked explicitly",
+      "command_illustrative": "python solve.py && python verify.py",
+      "checks": "All constraints, baseline objective, small oracle",
+      "implemented": false
+    },
+    {
+      "id": "opt-ortools",
+      "task_types": [
+        "optimization"
+      ],
+      "title": "OR-Tools routing/CP-SAT/min-cost flow",
+      "when": "Structure matches solver and package available",
+      "gates": "Time/solver-status tracked; no unapproved install",
+      "command_illustrative": "python solve_ortools.py",
+      "checks": "Infeasible vs feasible vs OPTIMAL status + raw check",
+      "implemented": false
+    },
+    {
+      "id": "scientific-scipy",
+      "task_types": [
+        "scientific_computing"
+      ],
+      "title": "NumPy/SciPy/SymPy scientific core",
+      "when": "ODE, linear algebra, symbolic, numeric solve",
+      "gates": "Relevant packages available",
+      "command_illustrative": "python model.py",
+      "checks": "Residual, limit, conservation, convergence",
+      "implemented": false
+    },
+    {
+      "id": "vision-classical",
+      "task_types": [
+        "computer_vision"
+      ],
+      "title": "OpenCV/Pillow classical processing",
+      "when": "Registered images, geometry or regions",
+      "gates": "Scale/ground truth documented",
+      "command_illustrative": "python inspect_images.py",
+      "checks": "Synthetic marks, shift negative control",
+      "implemented": false
+    },
+    {
+      "id": "statistics-holdout",
+      "task_types": [
+        "statistics_ml"
+      ],
+      "title": "Baseline and leakage-safe evaluation",
+      "when": "Prediction/inference from labeled observations",
+      "gates": "Correct sampling unit and split",
+      "command_illustrative": "python train_evaluate.py",
+      "checks": "Holdout, split leakage, calibration or residual",
+      "implemented": false
+    },
+    {
+      "id": "report-html",
+      "task_types": [
+        "reporting"
+      ],
+      "title": "Static HTML+CSV/PNG export",
+      "when": "Deliverable is readable report with evidence",
+      "gates": "No dynamic app necessary",
+      "command_illustrative": "python generate_report.py",
+      "checks": "Numbers and source trace + visual check",
+      "implemented": false
+    },
+    {
+      "id": "docs-retrieval",
+      "task_types": [
+        "documents_search"
+      ],
+      "title": "Source offsets + FTS5 index",
+      "when": "Many rules/pages searched repeatedly",
+      "gates": "Documents have extractable text or justified OCR",
+      "command_illustrative": "python index.py && python search.py",
+      "checks": "Exact source trace, outdated clause negative",
+      "implemented": false
+    },
+    {
+      "id": "container-optional",
+      "task_types": [
+        "integration"
+      ],
+      "title": "Docker/Compose as optional wrapper",
+      "when": "Several long-lived services/dependency reproducibility",
+      "gates": "Docker daemon available and authorized",
+      "command_illustrative": "docker compose up",
+      "checks": "Same endpoints vs direct run",
+      "implemented": false
+    },
+    {
+      "id": "mcp-local-optional",
+      "task_types": [
+        "integration"
+      ],
+      "title": "Local stdio MCP wrapper around CLI",
+      "when": "Repeated structured invocations benefit from tools",
+      "gates": "MCP enabled and tested; no outbound data",
+      "command_illustrative": "python mcp_server.py",
+      "checks": "CLI/MCP parity on fixed fixtures",
+      "implemented": false
+    }
+  ]
+}

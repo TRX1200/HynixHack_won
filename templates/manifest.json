@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "path": "REPORT.md",
+      "min_bytes": 10
+    },
+    {
+      "path": "results.json",
+      "format": "json",
+      "min_bytes": 2
+    }
+  ]
+}

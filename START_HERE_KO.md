@@ -1,82 +1,75 @@
-# 처음 시작할 때
+# 처음 시작: 전체 목록 대신 필요한 카드만
 
-이 파일은 개인 준비용 설명입니다. 현장 규정·과제 README·제공 환경의 안내가 우선입니다.
+## 1. 제공 환경의 AI에게 요청하기
 
-## 1. 입력하는 칸부터 구분
-
-| 현재 상태 | 넣을 것 |
-|---|---|
-| 터미널에 `user:~$` 같은 표시 | `codex` — 앞에 `/` 없음 |
-| Codex가 실행된 AI 입력창 | 한국어 요청, 지원되는 `/mcp`·`/skills`·`/model` |
-| MCP 설정 탭 | JSON만 |
-
-터미널에서 `/codex`나 `/model`을 입력해 파일 오류가 나면 먼저 입력 칸을 확인합니다.
-브라우저 IDE에 이미 편집기와 터미널이 있으면 개인 PC에 VS Code를 별도로 설치할 필요는 없습니다.
-
-## 2. 저장소와 압축 안의 소스를 구분
-
-이 저장소 루트에는 이 안내와 **toolkit-source.zip**이 있습니다.
-실행할 Python 코드와 Skills는 압축 안의 **_toolkit/**에 있습니다.
-Clone만 하고 `_prep_repo/tools/run.py`를 찾으면 없습니다. 압축을 먼저 풀어야 합니다.
-
-실제 과제 루트에서 아직 없는 새 폴더 이름을 사용합니다. 제공된 AI에게 수행을 맡길 수 있습니다.
-
-```sh
-git clone --depth 1 https://github.com/TRX1200/HynixHack_won.git _prep_repo
-```
-
-제공된 AI에게 `CHECKSUMS.sha256`과 파일의 해시를 대조하고, 압축 항목에 절대경로·상위폴더 탈출·
-심볼릭링크가 없는지 확인한 뒤 새 `_toolkit`으로 해제하도록 요청합니다.
-`unzip`, Python 등의 허용된 압축 해제 도구를 먼저 확인합니다. 도구가 없으면 제공 Helper의 안내를 따릅니다.
-기존 `_toolkit`이 있으면 덮어쓰거나 삭제하지 말고 위치/내용부터 확인합니다.
-
-## 3. Python은 원격 환경에서 확인
-
-AI에게 다음처럼 요청합니다.
+터미널의 `user:~$` 같은 입력 위치에서는 `codex`를 실행합니다. 앞에 `/`를 붙이지 않습니다.
+Codex가 실행된 뒤 아래처럼 요청하세요. 제공 환경이 허용하는 범위에서 수행합니다.
 
 ```text
-현재 과제 위치와 Python3/python, Node 실행 여부를 확인해줘.
-Python 3.10 이상이 있으면 실제 명령으로 _toolkit/tools/run.py doctor를 실행해줘.
-없으면 설치가 됐다고 가정하지 말고, Markdown Skill과 기존 프로젝트 언어로 시작해줘.
-모든 선택 패키지를 설치하지 말고 꼭 필요한 것만 알려줘.
+https://github.com/TRX1200/HynixHack_won
+이 공개 저장소를 기존 과제와 구분되는 새 폴더로 clone하고 START_HERE_KO.md만 먼저 읽어줘.
+이번 버전은 소스가 직접 들어 있으니 tools/inventory.py가 있는지 확인해줘.
+인벤토리 전체와 90개 레시피를 한꺼번에 읽지 마.
+실제 과제 README, 기존 코드, 실행 환경을 확인해 문제 유형과 미확정 조건을 정리해줘.
+검색기로 관련 카드 최대 6개만 찾고, 고른 카드만 읽어서 작은 구현과 검증에 활용해줘.
 ```
 
-`python`이 없어도 `python3`는 있을 수 있습니다. 둘 다 없으면 이 키트의 Python 도구와
-로컬 Python MCP는 실행할 수 없지만, AI는 Markdown Skill을 읽을 수 있습니다.
-기존 프로젝트가 JS/TS이면 그 구조와 실제 설치된 실행기를 먼저 사용합니다.
-Python이 꼭 필요하면 허용된 설치 방법을 Helper에 확인하고 실제 버전/작은 실행까지 검증합니다.
+공개 HTTPS 저장소는 GitHub 로그인/토큰 없이 내려받을 수 있습니다. 실제 환경의 네트워크 허용 여부는 별도입니다.
+기존 폴더가 있으면 덮어쓰거나 삭제하지 말고 먼저 현재 내용과 버전을 확인합니다.
 
-## 4. Skill은 두 개부터
+## 2. 처음 실행할 것
 
-AI에게 `_toolkit/.agents/skills/wb-start/SKILL.md`와 `wb-verify/SKILL.md`를 읽게 합니다.
-Python과 설치가 허용되면 과제 루트에서 다음 설치를 맡길 수 있습니다.
+명령은 **받은 저장소 루트** 기준입니다. Python 3.10+가 있는지 먼저 확인합니다.
+`python` 대신 `python3`가 제공될 수 있습니다.
 
 ```sh
-python3 _toolkit/tools/install_skills.py --project . --skills wb-start wb-verify
+python tools/inventory.py doctor
+python tools/verify_release.py
+python tools/inventory.py search "현재 필요한 작업의 짧은 설명" --limit 4 --json
 ```
 
-실제 실행기 이름이 `python`이면 바꿉니다. 기존 Skill은 덮어쓰지 않습니다.
-지원되는 `/skills`에서 인식을 확인하고, 안 되면 원본 SKILL.md를 경로로 읽도록 합니다.
+검색은 단어·한국어 별칭 기반 후보 찾기이며 점수는 확률이 아닙니다.
+카드 ID를 확인하고 `python tools/inventory.py show 카드ID`로 선택한 상세 정보만 읽습니다.
+Python이 없으면 `field_inventory/catalog/README.md`에서 해당 분야 인덱스 하나와 카드 몇 개만 읽습니다.
 
-## 5. MCP는 필요한 경우 연결
+## 3. 구조적 조건으로 선택하기
 
-- 문서 반복 검색: 압축 안 `docs/MCP.md` 순서로 합성 색인을 만들고 `tools/mcp_config.py`로 실제 경로 JSON 생성.
-- 웹 UI 검증: 제공 도구를 먼저 확인하고, 필요하면 `configs/mcp-playwright.example.json`과 실행 환경 확인.
-- JSON은 MCP 설정 탭에 기존 서버를 보존해 병합·저장합니다. 호스트 안내에 따라 Codex 세션만 정상 재시작합니다.
-- 실행된 Codex의 `/mcp`와 작은 실제 도구 호출로 확인합니다. 이름만 보이는 것은 호출 성공이 아닙니다.
+AI가 실제 요구에서 확인한 사실만으로 로컬 `problem_profile.json`을 작성하게 합니다.
+필드 형태는 `field_inventory/schemas/problem_profile.schema.json`과 가장 가까운 합성 프로필 하나를 참고합니다.
+확인 못 한 조건은 `unknowns`에 기록합니다.
 
-문제·파일·결과물을 외부 서비스로 보내거나 개인 AI 키를 연결하지 않습니다.
-차단된 설정·접속·업로드를 다른 경로로 우회하지 않습니다. 현장 안내에서 허용하지 않은 연결은 추가하지 않습니다.
-
-## 6. 실제 요구를 받은 뒤
-
-```text
-과제 README를 읽고 필수 행동, 입력, 출력, 제출물을 먼저 정리해줘.
-기존 스택을 유지하고 가장 작은 동작 한 건을 실제 실행해서 검증해줘.
-오류가 나면 재현 조건부터 확인하고 최소 수정 후 같은 검사를 다시 해줘.
-완료한 것, 실제 검사 결과, 아직 못 한 것을 구분해줘.
+```sh
+python tools/inventory.py plan /실제/로컬/problem_profile.json --limit 6 --json
+python tools/contract_factory.py /실제/로컬/problem_profile.json --format json --out /새/로컬/validation_plan.json
 ```
 
-유형을 미리 맞히는 대신 필요한 작업 Skill 한두 개만 선택합니다.
-기초 계산은 단위·가정이 일치할 때만 사용하고, UI 자료는 요구에 맞는 구성 요소를 선택하는 데 씁니다.
-실제 문제와 작업 결과는 허용된 환경 안에 보관합니다. 준비 공개 저장소를 답안 전달 경로로 쓰지 않습니다.
+경로는 실제 값으로 바꿉니다. 프로필·검증 계획·실제 결과는 과제 작업 공간 안에 보관합니다.
+`NEEDS_CLASSIFICATION`이면 요구를 더 확인하고, `REVIEW_REQUIRED`이면 충돌을 해결합니다.
+검증 계획은 처음에 모두 `NOT_RUN`입니다. 계획 생성 자체로 검증 통과가 되지 않습니다.
+
+## 4. Skills와 실행 예제는 선택해서
+
+처음에는 `.agents/skills/wb-field-inventory/SKILL.md`와 `wb-verify/SKILL.md`만 직접 읽어도 됩니다.
+프로젝트 로컬 Skill 등록이 허용되면 필요한 것만 복사할 수 있습니다.
+
+```sh
+python tools/install_skills.py --project /실제/과제/루트 --skills wb-field-inventory wb-verify
+```
+
+기존 Skill을 덮어쓰지 않습니다. 등록 인식은 실제 제공 Codex에서 확인합니다.
+실행 예제는 [docs/ARCHETYPE_DEMOS.md](docs/ARCHETYPE_DEMOS.md)에서 고릅니다.
+합성 데모 통과는 실제 과제의 요구를 검증했다는 뜻이 아닙니다.
+
+## 5. MCP와 재접속
+
+검색기와 코드 선택기는 CLI이므로 MCP 연결이 필요 없습니다.
+MCP가 필요하면 제공 AI에게 현재 실행기·경로·허용 범위에 맞는 설정 JSON을 요청합니다.
+기존 서버를 보존해 설정을 저장하고, 호스트 안내에 따라 Codex만 정상 재시작한 뒤 실제 호출로 확인합니다.
+
+`tools/session_state.py --help`를 보고 별도 로컬 파일에 현재 상태와 다음 단계를 기록할 수 있습니다.
+이 도구는 저장된 명령을 자동 실행하지 않고, 사용자가 적은 통과 주장도 인증하지 않습니다.
+재접속하면 파일·서버·최근 실제 테스트를 확인한 뒤 이어 갑니다.
+
+`toolkit-source.zip`은 전체 소스의 별도 배포본입니다. Clone으로 `tools/`가 있으면 해제하지 않습니다.
+ZIP만 받은 경우 `CHECKSUMS.sha256`을 대조하고 새 폴더에 풀어 `_toolkit/`을 루트로 사용합니다.
+제한된 응시 환경에는 개인 PC 파일을 업로드하는 방식으로 반입하지 않습니다.

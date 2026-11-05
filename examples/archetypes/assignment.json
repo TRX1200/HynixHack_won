@@ -1,0 +1,11 @@
+{
+  "items": [
+    {"id": "item-001", "requires": ["X"]},
+    {"id": "item-002", "requires": ["Y"]},
+    {"id": "item-003", "requires": ["X"]}
+  ],
+  "options": [
+    {"id": "basic", "unit_cost": "10", "capacity": 1, "features": ["X"]},
+    {"id": "plus", "unit_cost": "25", "capacity": 2, "features": ["X", "Y"]}
+  ]
+}

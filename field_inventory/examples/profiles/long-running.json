@@ -1,0 +1,18 @@
+{
+  "_synthetic": true,
+  "id": "synth-recovery",
+  "summary": "Run a deterministic pipeline that may be interrupted and safely restarted",
+  "task_types": [
+    "data_pipeline",
+    "quality_security"
+  ],
+  "signals": [
+    "reconnect",
+    "idempotent",
+    "pipeline",
+    "checkpoint"
+  ],
+  "hard_constraints": [
+    "no duplicate results on rerun"
+  ]
+}

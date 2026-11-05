@@ -1,0 +1,18 @@
+{
+  "_synthetic": true,
+  "id": "synth-unstructured",
+  "summary": "Extract clauses from many synthetic PDF and text documents, aggregate entities and publish searchable web pages",
+  "task_types": [
+    "documents_search",
+    "data_pipeline",
+    "web_app"
+  ],
+  "signals": [
+    "pdf",
+    "text extraction",
+    "source offset",
+    "index",
+    "search",
+    "web"
+  ]
+}

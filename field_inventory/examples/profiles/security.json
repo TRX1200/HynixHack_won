@@ -1,0 +1,23 @@
+{
+  "_synthetic": true,
+  "id": "synth-role",
+  "summary": "Role based permissions must prevent unauthorized change even with hidden admin buttons",
+  "task_types": [
+    "web_app",
+    "quality_security"
+  ],
+  "signals": [
+    "login",
+    "admin",
+    "permissions",
+    "roles",
+    "unauthorized",
+    "security"
+  ],
+  "deliverables": [
+    "protected API"
+  ],
+  "properties": {
+    "requires_role_authorization": true
+  }
+}
